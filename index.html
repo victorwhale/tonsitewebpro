@@ -441,15 +441,15 @@
     /* ===== REALISATIONS ===== */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
     .project-card {
       position: relative;
       background: rgba(15, 23, 42, 0.6);
       border: 1px solid rgba(148, 163, 184, 0.08);
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
@@ -459,36 +459,58 @@
     }
 
     .project-card:hover {
-      border-color: rgba(59, 130, 246, 0.3);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.35);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(59, 130, 246, 0.18);
     }
 
     .project-thumb {
       width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.06));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
+      height: 280px;
+      overflow: hidden;
       border-bottom: 1px solid rgba(148, 163, 184, 0.06);
     }
 
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.05);
+    }
+
     .project-info {
-      padding: 24px;
+      padding: 28px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
     }
 
     .project-info h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .project-info p {
       font-size: 0.9rem;
       color: #94a3b8;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
 
     .project-link {
@@ -757,6 +779,8 @@
 
       .projects-grid { grid-template-columns: 1fr; }
 
+      .project-thumb { height: 220px; }
+
       .pricing-grid { grid-template-columns: 1fr; }
 
       .maintenance-grid { grid-template-columns: 1fr; }
@@ -940,26 +964,29 @@
       </div>
       <div class="projects-grid">
         <a class="project-card reveal" href="https://victorwhale.github.io/kammerzel-showcase/" target="_blank" rel="noopener">
-          <div class="project-thumb">🏛️</div>
+          <div class="project-thumb"><img src="img/restaurant.png" alt="Site restaurant"></div>
           <div class="project-info">
-            <h3>Maison Kammerzell</h3>
-            <p>Restaurant historique à Strasbourg. Site vitrine mettant en valeur le patrimoine et l'expérience gastronomique.</p>
+            <span class="project-tag">Restaurant</span>
+            <h3>Site vitrine gastronomique</h3>
+            <p>Mise en valeur du patrimoine et de l'expérience culinaire d'un restaurant historique à Strasbourg.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
         <a class="project-card reveal" href="https://victorwhale.github.io/design-brilliance-studio/" target="_blank" rel="noopener">
-          <div class="project-thumb">🎨</div>
+          <div class="project-thumb"><img src="img/architectes.png" alt="Site architectes"></div>
           <div class="project-info">
-            <h3>Design Brilliance Studio</h3>
-            <p>Studio de design créatif. Identité visuelle forte et navigation fluide pour mettre en avant les réalisations.</p>
+            <span class="project-tag">Architectes</span>
+            <h3>Vitrine cabinet d'architecture</h3>
+            <p>Design immersif et navigation fluide pour mettre en avant les projets et l'identité créative du cabinet.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
         <a class="project-card reveal" href="https://victorwhale.github.io/m-a-avocat-hub/" target="_blank" rel="noopener">
-          <div class="project-thumb">⚖️</div>
+          <div class="project-thumb"><img src="img/avocats.png" alt="Site avocats"></div>
           <div class="project-info">
-            <h3>M-A Avocat Hub</h3>
-            <p>Cabinet d'avocats. Site professionnel pensé pour rassurer les prospects et faciliter la prise de contact.</p>
+            <span class="project-tag">Avocats</span>
+            <h3>Site cabinet d'avocats M&A</h3>
+            <p>Site professionnel pensé pour rassurer les prospects et faciliter la prise de rendez-vous.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
