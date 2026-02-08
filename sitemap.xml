@@ -121,6 +121,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Pages services additionnelles -->
+  <url>
+    <loc>https://tonsitewebpro.com/prix-site-internet-avocat/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tonsitewebpro.com/agence-web-avocat/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tonsitewebpro.com/maintenance-site-web-avocat/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://tonsitewebpro.com/blog/</loc>
@@ -166,6 +186,13 @@
   </url>
   <url>
     <loc>https://tonsitewebpro.com/comment-choisir-un-hebergeur-web-guide-complet-pour-les-debutants/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tonsitewebpro.com/comment-apparaitre-en-premier-sur-google-quand-on-est-avocat/</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
