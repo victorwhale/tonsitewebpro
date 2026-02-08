@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agence SEO pour Avocats &agrave; Marseille | TonSiteWebPro</title>
+  <meta name="description" content="Agence SEO sp&eacute;cialis&eacute;e pour cabinets d'avocats &agrave; Marseille. Dominez Google, Google Maps et les IA dans la deuxi&egrave;me ville de France. Audit gratuit.">
+  <link rel="canonical" href="https://tonsitewebpro.com/agence-seo-marseille/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7; color: #3D3D4E; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
+    }
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+    nav, section, footer, .breadcrumb-bar { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+    h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+    .section-subtitle { color: #6B7280; font-size: 1.1rem; max-width: 640px; margin-bottom: 48px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em; }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta { background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem; padding: 10px 22px; border-radius: 8px; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+    .breadcrumb-bar { padding-top: 80px; padding-bottom: 8px; background: #F5F0E8; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #6B7280; list-style: none; flex-wrap: wrap; }
+    .breadcrumb a { color: #8B6914; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb li::after { content: '>'; margin-left: 8px; color: #9CA3AF; }
+    .breadcrumb li:last-child::after { content: ''; margin: 0; }
+    .breadcrumb li:last-child { color: #3D3D4E; }
+    .hero { padding-top: 40px; padding-bottom: 80px; background: linear-gradient(180deg, #F5F0E8 0%, #FDFBF7 100%); }
+    .hero-content { max-width: 740px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .hero p { font-size: clamp(1rem, 2vw, 1.1rem); color: #6B7280; max-width: 600px; margin-bottom: 28px; }
+    .hero-cta { display: inline-block; background: #1A1A2E; color: #F5F0E8; font-weight: 700; font-size: 1rem; padding: 16px 36px; border-radius: 10px; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
+    .hero-cta:hover { transform: translateY(-2px); background: #2D4A7A; box-shadow: 0 12px 40px rgba(26,26,46,0.15); }
+    .hero-note { margin-top: 14px; font-size: 0.85rem; color: #9CA3AF; }
+    .elegant-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent); border: none; margin: 0; }
+    .section-white { background: #FFFFFF; }
+    .section-warm { background: #F5F0E8; }
+    .section-cream { background: #FDFBF7; }
+    .content-block p { color: #6B7280; font-size: 0.98rem; margin-bottom: 16px; max-width: 720px; }
+    .content-block h2 { margin-bottom: 20px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+    .service-card { background: #FDFBF7; border: 1px solid rgba(139,105,20,0.1); border-radius: 16px; padding: 32px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
+    .service-card:hover { border-color: rgba(139,105,20,0.25); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,26,46,0.06); }
+    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-card h3 { font-family: 'Playfair Display', Georgia, serif; }
+    .service-card p { color: #6B7280; font-size: 0.95rem; margin-top: 8px; }
+    .stats-bar { background: #1A1A2E; padding: 48px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; text-align: center; }
+    .stat-item { color: #F5F0E8; }
+    .stat-number { font-family: 'Playfair Display', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: #C9A84C; margin-bottom: 4px; }
+    .stat-label { font-size: 0.85rem; color: rgba(245,240,232,0.7); }
+    .local-list { list-style: none; margin-top: 24px; }
+    .local-list li { padding: 10px 0 10px 32px; position: relative; color: #6B7280; font-size: 0.95rem; border-bottom: 1px solid rgba(139,105,20,0.06); }
+    .local-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 20px; height: 20px; background: rgba(139,105,20,0.1); border-radius: 50%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M1 5l3 3 7-7' stroke='%238B6914' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+    .faq-list { max-width: 720px; margin-top: 32px; }
+    .faq-item { border-bottom: 1px solid rgba(139,105,20,0.1); padding: 24px 0; }
+    .faq-question { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 600; color: #1A1A2E; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question::after { content: '+'; font-size: 1.4rem; color: #8B6914; transition: transform 0.3s; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-top: 16px; }
+    .faq-answer p { color: #6B7280; font-size: 0.95rem; }
+    .cta-section { background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%); text-align: center; }
+    .cta-section h2 { margin-bottom: 16px; }
+    .cta-section p { color: #6B7280; max-width: 560px; margin: 0 auto 32px; font-size: 1.05rem; }
+    .cta-btn { display: inline-block; background: #1A1A2E; color: #F5F0E8; font-weight: 700; font-size: 1rem; padding: 16px 40px; border-radius: 10px; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
+    .cta-btn:hover { transform: translateY(-2px); background: #2D4A7A; box-shadow: 0 12px 40px rgba(26,26,46,0.15); }
+    .cta-note { margin-top: 14px; font-size: 0.85rem; color: #9CA3AF; }
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; text-decoration: none; }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy { width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08); }
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .hero { padding-top: 32px; padding-bottom: 56px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) { .container { padding: 0 16px; } .stats-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/referencement-seo/">R&eacute;f&eacute;rencement SEO</a></li>
+        <li>Marseille</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="badge">SEO Avocats &mdash; Marseille</div>
+        <h1>R&eacute;f&eacute;rencement SEO pour <span class="accent">Avocats &agrave; Marseille</span></h1>
+        <p>Deuxi&egrave;me ville de France, Marseille est aussi le deuxi&egrave;me march&eacute; juridique du pays. Avec plus de 3&nbsp;500 avocats au barreau, se d&eacute;marquer en ligne n'est plus une option&nbsp;: c'est une n&eacute;cessit&eacute; strat&eacute;gique pour la p&eacute;rennit&eacute; de votre cabinet.</p>
+        <a href="/#audit" class="hero-cta">Demander mon audit SEO gratuit</a>
+        <p class="hero-note">Analyse compl&egrave;te sous 48h &middot; Sans engagement &middot; Confidentiel</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="section-white">
+    <div class="container content-block">
+      <div class="reveal">
+        <div class="badge">Enjeux marseillais</div>
+        <h2>Le SEO &agrave; Marseille&nbsp;: un march&eacute; <span class="accent">ultra-comp&eacute;titif</span></h2>
+      </div>
+      <div class="reveal">
+        <p>Le barreau de Marseille est le troisi&egrave;me de France par le nombre d'avocats inscrits. Le Tribunal judiciaire de Marseille, la Cour d'appel d'Aix-en-Provence et le Tribunal de commerce g&eacute;n&egrave;rent un flux constant de dossiers. Pour un justiciable marseillais, le choix d'un avocat commence presque syst&eacute;matiquement par une recherche Google.</p>
+        <p>Le probl&egrave;me&nbsp;: la concurrence en ligne est f&eacute;roce. Les requ&ecirc;tes &laquo;&nbsp;avocat Marseille&nbsp;&raquo; ou &laquo;&nbsp;avocat p&eacute;naliste Marseille&nbsp;&raquo; sont parmi les plus disput&eacute;es de la r&eacute;gion PACA. Sans une strat&eacute;gie SEO structur&eacute;e, votre site reste enfoui sous des dizaines de concurrents.</p>
+        <p>L'opportunit&eacute; que beaucoup n&eacute;gligent encore&nbsp;: les intelligences artificielles. Quand un Marseillais demande &agrave; ChatGPT &laquo;&nbsp;quel avocat me recommandes-tu pour un divorce &agrave; Marseille&nbsp;?&nbsp;&raquo;, l'IA puise ses r&eacute;ponses dans les sites les mieux structur&eacute;s. Notre travail consiste &agrave; faire en sorte que votre cabinet fasse partie de ces r&eacute;ponses.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="section-cream">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Nos services</div>
+        <h2>Une strat&eacute;gie SEO &agrave; la hauteur du <span class="accent">march&eacute; marseillais</span></h2>
+        <p class="section-subtitle">Marseille exige une approche SEO robuste et diff&eacute;renci&eacute;e. Voici les piliers de notre intervention.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">&#128205;</div>
+          <h3>SEO Local par Arrondissement</h3>
+          <p>Marseille compte 16 arrondissements aux profils tr&egrave;s diff&eacute;rents. Nous ciblons les requ&ecirc;tes par quartier&nbsp;: &laquo;&nbsp;avocat 6&egrave;me Marseille&nbsp;&raquo;, &laquo;&nbsp;avocat Vieux-Port&nbsp;&raquo;, &laquo;&nbsp;cabinet Castellane&nbsp;&raquo;.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9997;&#65039;</div>
+          <h3>Contenu d'Autorit&eacute;</h3>
+          <p>R&eacute;daction de contenus longs et d&eacute;taill&eacute;s sur vos domaines d'expertise. Dans un march&eacute; satur&eacute;, la qualit&eacute; du contenu est le premier facteur de diff&eacute;renciation.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9881;&#65039;</div>
+          <h3>Performance Technique</h3>
+          <p>Audit Core Web Vitals, migration HTTPS, refonte de l'architecture des URLs et impl&eacute;mentation du balisage structur&eacute; LegalService et Attorney.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#129302;</div>
+          <h3>Strat&eacute;gie IA &amp; SGE</h3>
+          <p>Pr&eacute;paration de votre site pour la Search Generative Experience de Google et les r&eacute;ponses des IA conversationnelles. Le SEO de demain se joue aujourd'hui.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#128279;</div>
+          <h3>Netlinking Premium</h3>
+          <p>Acquisition de backlinks depuis des m&eacute;dias r&eacute;gionaux (La Provence, Marsactu), des annuaires juridiques et des sites institutionnels pour b&acirc;tir une autorit&eacute; solide.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#128202;</div>
+          <h3>Analytics &amp; Conversion</h3>
+          <p>Suivi pr&eacute;cis des appels, formulaires et prises de rendez-vous g&eacute;n&eacute;r&eacute;s par votre SEO. Chaque euro investi est mesur&eacute;.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-item">
+          <div class="stat-number">3 500+</div>
+          <div class="stat-label">avocats au barreau de Marseille</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">870k</div>
+          <div class="stat-label">habitants dans la m&eacute;tropole</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">+145%</div>
+          <div class="stat-label">de trafic organique moyen apr&egrave;s 6 mois</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">48h</div>
+          <div class="stat-label">pour recevoir votre audit SEO complet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="section-warm">
+    <div class="container content-block">
+      <div class="reveal">
+        <div class="badge">Connaissance du terrain</div>
+        <h2>Marseille en d&eacute;tail&nbsp;: notre <span class="accent">expertise locale</span></h2>
+      </div>
+      <div class="reveal">
+        <p>Marseille est une ville-monde. Les besoins juridiques varient consid&eacute;rablement d'un arrondissement &agrave; l'autre&nbsp;: droit des affaires dans le 8&egrave;me, droit p&eacute;nal dans les quartiers nord, droit maritime au Vieux-Port, contentieux immobiliers li&eacute;s aux grands projets urbains d'Eurom&eacute;diterran&eacute;e. Nous construisons votre strat&eacute;gie SEO autour de ces r&eacute;alit&eacute;s g&eacute;ographiques.</p>
+      </div>
+      <ul class="local-list reveal">
+        <li>Ciblage multi-arrondissements&nbsp;: Castellane, Vieux-Port, Prado, La Joliette, Eurom&eacute;diterran&eacute;e, Saint-Charles</li>
+        <li>R&eacute;f&eacute;rencement associ&eacute; au TJ de Marseille, au Tribunal de commerce et &agrave; la Cour d'appel d'Aix</li>
+        <li>Contenus sp&eacute;cialis&eacute;s&nbsp;: droit maritime, droit des affaires internationales, droit p&eacute;nal complexe</li>
+        <li>Strat&eacute;gie d'avis Google adapt&eacute;e &agrave; un march&eacute; o&ugrave; la r&eacute;putation en ligne est d&eacute;terminante</li>
+        <li>Couverture &eacute;tendue&nbsp;: Aix-en-Provence, Aubagne, Martigues, La Ciotat, Vitrolles</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="section-white">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Questions fr&eacute;quentes</div>
+        <h2>FAQ&nbsp;: SEO pour avocats <span class="accent">&agrave; Marseille</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question">Le SEO peut-il fonctionner dans un march&eacute; aussi concurrentiel que Marseille&nbsp;?</div>
+          <div class="faq-answer">
+            <p>Oui, mais il exige une strat&eacute;gie plus sophistiqu&eacute;e. La cl&eacute; est de cibler des requ&ecirc;tes sp&eacute;cifiques plut&ocirc;t que g&eacute;n&eacute;riques. &laquo;&nbsp;Avocat droit maritime Marseille&nbsp;&raquo; est beaucoup plus accessible que &laquo;&nbsp;avocat Marseille&nbsp;&raquo;. Nous identifions ces opportunit&eacute;s lors de l'audit.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Dois-je choisir entre SEO et Google Ads&nbsp;?</div>
+          <div class="faq-answer">
+            <p>Les deux sont compl&eacute;mentaires. &Agrave; Marseille, le co&ucirc;t par clic sur Google Ads pour les mots-cl&eacute;s juridiques est tr&egrave;s &eacute;lev&eacute; (souvent plus de 15&nbsp;&euro;). Le SEO offre un retour sur investissement nettement sup&eacute;rieur sur le moyen terme, tout en r&eacute;duisant votre d&eacute;pendance aux publicit&eacute;s payantes.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Combien de temps avant de voir mon cabinet en premi&egrave;re page&nbsp;?</div>
+          <div class="faq-answer">
+            <p>Sur un march&eacute; comme Marseille, comptez 4 &agrave; 8 mois pour des requ&ecirc;tes sp&eacute;cialis&eacute;es, et 8 &agrave; 12 mois pour les requ&ecirc;tes les plus concurrentielles. Les progr&egrave;s sur Google Maps sont g&eacute;n&eacute;ralement plus rapides, avec des gains visibles d&egrave;s les premi&egrave;res semaines.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Pouvez-vous cibler &agrave; la fois Marseille et Aix-en-Provence&nbsp;?</div>
+          <div class="faq-answer">
+            <p>Oui, c'est une strat&eacute;gie courante pour les cabinets pr&eacute;sents dans la m&eacute;tropole. Nous cr&eacute;ons des pages d&eacute;di&eacute;es &agrave; chaque ville et structurons votre pr&eacute;sence Google Business pour couvrir les deux zones g&eacute;ographiques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="cta-section">
+    <div class="container reveal">
+      <div class="badge">Passez &agrave; l'action</div>
+      <h2>D&eacute;marquez votre cabinet <span class="accent">&agrave; Marseille</span></h2>
+      <p>Un audit SEO complet, gratuit et confidentiel pour comprendre o&ugrave; se situe votre cabinet face &agrave; la concurrence marseillaise.</p>
+      <a href="/#audit" class="cta-btn">Demander mon audit gratuit</a>
+      <p class="cta-note">R&eacute;ponse sous 48h &middot; Sans engagement &middot; 100&nbsp;% confidentiel</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+    document.querySelectorAll('.faq-question').forEach((q) => {
+      q.addEventListener('click', () => { q.parentElement.classList.toggle('open'); });
+    });
+  </script>
+
+</body>
+</html>

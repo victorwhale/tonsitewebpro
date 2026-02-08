@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre agence | TonSiteWebPro - Sp&eacute;cialiste sites web pour avocats</title>
+  <meta name="description" content="D&eacute;couvrez TonSiteWebPro, l'agence web sp&eacute;cialis&eacute;e dans la cr&eacute;ation de sites pour cabinets d'avocats. Notre mission : faire briller votre cabinet en ligne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7; color: #3D3D4E; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
+    }
+
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+
+    nav, section, footer { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+    .section-subtitle { color: #6B7280; font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta {
+      background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+
+    .elegant-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent);
+      border: none; margin: 0;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 140px; padding-bottom: 60px;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 1.1rem; color: #6B7280; max-width: 640px; }
+
+    /* MISSION */
+    .mission-section { background: #FFFFFF; }
+    .mission-content { max-width: 760px; margin: 0 auto; }
+    .mission-content p { font-size: 1.05rem; color: #3D3D4E; margin-bottom: 20px; line-height: 1.8; }
+    .mission-highlight {
+      padding: 28px 32px; background: rgba(139,105,20,0.05); border-left: 3px solid #8B6914;
+      border-radius: 0 12px 12px 0; margin: 32px 0;
+    }
+    .mission-highlight p {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A2E;
+      font-style: italic; margin-bottom: 0;
+    }
+
+    /* APPROACH */
+    .approach-section { background: #F5F0E8; }
+    .approach-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;
+    }
+    .approach-card {
+      background: #FFFFFF; border: 1px solid rgba(139,105,20,0.1); border-radius: 16px; padding: 32px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .approach-card:hover {
+      border-color: rgba(139,105,20,0.25); transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(26,26,46,0.06);
+    }
+    .approach-icon { font-size: 2rem; margin-bottom: 16px; }
+    .approach-card h3 {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 10px;
+    }
+    .approach-card p { color: #6B7280; font-size: 0.95rem; }
+
+    /* VALUES */
+    .values-section { background: #FFFFFF; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    }
+    .value-card { text-align: center; padding: 40px 24px; }
+    .value-icon {
+      width: 72px; height: 72px; background: rgba(139,105,20,0.08); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    .value-card h3 {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .value-card p { color: #6B7280; font-size: 0.92rem; max-width: 300px; margin: 0 auto; }
+
+    /* CTA SECTION */
+    .cta-section { background: #1A1A2E; text-align: center; }
+    .cta-section h2 { color: #F5F0E8; }
+    .cta-section p { color: rgba(245,240,232,0.7); font-size: 1.05rem; max-width: 560px; margin: 0 auto 32px; }
+    .cta-button {
+      display: inline-block; background: #8B6914; color: #FDFBF7; font-weight: 700; font-size: 1rem;
+      padding: 16px 40px; border-radius: 10px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,105,20,0.3); }
+
+    /* FOOTER */
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #F5F0E8; text-decoration: none;
+    }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy {
+      width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem;
+      margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .page-header { padding-top: 120px; padding-bottom: 48px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .approach-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Qui sommes-nous</div>
+        <h1>L'agence qui <span class="accent">comprend les avocats</span></h1>
+        <p>Nous ne sommes pas une agence web g&eacute;n&eacute;raliste. Nous sommes sp&eacute;cialis&eacute;s dans le secteur juridique, parce que cr&eacute;er un site pour un cabinet exige une approche diff&eacute;rente.</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="elegant-divider">
+
+  <!-- MISSION -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Notre mission</div>
+        <h2>Aider les cabinets d'avocats &agrave; <span class="accent">briller en ligne</span></h2>
+      </div>
+      <div class="mission-content reveal">
+        <p>Chaque jour, des milliers de justiciables recherchent un avocat sur Internet. En 3 secondes, ils jugent la cr&eacute;dibilit&eacute; d'un cabinet &agrave; travers son site web. C'est injuste&nbsp;? Peut-&ecirc;tre. Mais c'est la r&eacute;alit&eacute; du march&eacute;.</p>
+        <p>Notre mission est simple&nbsp;: faire en sorte que votre pr&eacute;sence en ligne soit &agrave; la hauteur de votre expertise juridique. Un site qui inspire confiance, qui appara&icirc;t sur Google quand vos prospects vous cherchent, et qui convertit les visiteurs en clients.</p>
+        <div class="mission-highlight">
+          <p>&laquo;&nbsp;Votre comp&eacute;tence juridique m&eacute;rite un site web &agrave; la hauteur. Nous en faisons une affaire personnelle.&nbsp;&raquo;</p>
+        </div>
+        <p>Nous comprenons les enjeux sp&eacute;cifiques de votre profession&nbsp;: la d&eacute;ontologie, le secret professionnel, la n&eacute;cessit&eacute; d'inspirer autorit&eacute; et confiance. C'est cette connaissance intime du secteur juridique qui fait notre diff&eacute;rence.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- APPROACH -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Notre approche</div>
+        <h2>Une m&eacute;thode <span class="accent">pens&eacute;e pour les avocats</span></h2>
+        <p class="section-subtitle">Comme un bon dossier juridique, un site web efficace repose sur une m&eacute;thodologie rigoureuse.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#9878;&#65039;</div>
+          <h3>Sp&eacute;cialisation juridique</h3>
+          <p>Nous travaillons exclusivement avec des cabinets d'avocats. Cette sp&eacute;cialisation nous permet de comprendre vos contraintes d&eacute;ontologiques, votre vocabulaire et les attentes de vos clients potentiels.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#128200;</div>
+          <h3>SEO local et IA</h3>
+          <p>Nous optimisons votre visibilit&eacute; sur Google mais aussi sur ChatGPT et Perplexity. Quand un prospect cherche &laquo;&nbsp;avocat + votre ville&nbsp;&raquo;, votre cabinet doit appara&icirc;tre en premier.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#127919;</div>
+          <h3>Conversion de prospects</h3>
+          <p>Un beau site ne suffit pas. Nous concevons des parcours utilisateurs qui transforment les visiteurs en rendez-vous. Formulaires de contact, appels &agrave; l'action, preuves sociales&nbsp;: chaque d&eacute;tail compte.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#9889;</div>
+          <h3>Performance technique</h3>
+          <p>Sites rapides, compatibles mobile, accessibles et conformes au RGPD. Un site lent, c'est comme un avocat en retard &agrave; l'audience&nbsp;: la premi&egrave;re impression est d&eacute;j&agrave; compromise.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#128221;</div>
+          <h3>R&eacute;daction sp&eacute;cialis&eacute;e</h3>
+          <p>Nous r&eacute;digeons des contenus qui parlent la langue de vos clients, pas du jargon technique. Des textes clairs, professionnels et optimis&eacute;s pour le r&eacute;f&eacute;rencement.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-icon">&#129309;</div>
+          <h3>Accompagnement continu</h3>
+          <p>Apr&egrave;s la mise en ligne, nous restons &agrave; vos c&ocirc;t&eacute;s. Maintenance, mises &agrave; jour, &eacute;volutions&nbsp;: nous sommes votre partenaire num&eacute;rique sur le long terme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="badge">Nos valeurs</div>
+        <h2>Les principes qui <span class="accent">guident notre travail</span></h2>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Comme les v&ocirc;tres, nos valeurs ne sont pas n&eacute;gociables.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">&#128274;</div>
+          <h3>Confidentialit&eacute;</h3>
+          <p>Nous traitons vos informations avec la m&ecirc;me rigueur que vous traitez celles de vos clients. Discr&eacute;tion absolue, donn&eacute;es prot&eacute;g&eacute;es, h&eacute;bergement en France.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">&#11088;</div>
+          <h3>Qualit&eacute;</h3>
+          <p>Chaque site est con&ccedil;u sur-mesure, jamais de templates g&eacute;n&eacute;riques. Nous apportons le m&ecirc;me soin &agrave; votre site que vous apportez &agrave; vos dossiers.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">&#128640;</div>
+          <h3>R&eacute;sultats</h3>
+          <p>Un beau site qui n'est pas visible ne sert &agrave; rien. Nous mesurons le succ&egrave;s en visites, en demandes de contact et en nouveaux clients pour votre cabinet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <h2>Pr&ecirc;t &agrave; transformer votre <span class="accent">pr&eacute;sence en ligne</span>&nbsp;?</h2>
+      <p>Demandez votre audit gratuit et d&eacute;couvrez comment nous pouvons faire de votre site web le meilleur associ&eacute; de votre cabinet.</p>
+      <a href="/#audit" class="cta-button">Demander mon audit gratuit</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+
+</body>
+</html>

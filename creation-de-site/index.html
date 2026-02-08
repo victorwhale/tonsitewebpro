@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cr&eacute;ation de Site Web pour Avocats | TonSiteWebPro</title>
+  <meta name="description" content="Cr&eacute;ation de sites web professionnels pour avocats et cabinets juridiques. Design sur-mesure, SEO optimis&eacute;, conforme RGPD. Audit gratuit sous 48h.">
+  <link rel="canonical" href="https://tonsitewebpro.com/creation-de-site/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7;
+      color: #3D3D4E;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ===== SUBTLE BG PATTERN ===== */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-pattern::before {
+      content: '';
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      top: -20%;
+      right: -15%;
+      background: radial-gradient(circle, rgba(184, 156, 107, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-pattern::after {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      bottom: -10%;
+      left: -10%;
+      background: radial-gradient(circle, rgba(45, 74, 122, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite reverse;
+      animation-delay: -10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(40px, -30px) scale(1.03); }
+      66% { transform: translate(-20px, 20px) scale(0.97); }
+    }
+
+    /* ===== Z-INDEX FOR CONTENT ===== */
+    nav, section, footer, .breadcrumb-bar {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+
+    h1, h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .section-subtitle {
+      color: #6B7280;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    .accent { color: #8B6914; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(139, 105, 20, 0.08);
+      color: #8B6914;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(139, 105, 20, 0.15);
+      margin-bottom: 16px;
+    }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139, 105, 20, 0.08);
+      transition: box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 2px 20px rgba(26, 26, 46, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1A1A2E;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span { color: #8B6914; }
+
+    .nav-cta {
+      background: #1A1A2E;
+      color: #F5F0E8;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: #2D4A7A;
+      box-shadow: 0 6px 20px rgba(26, 26, 46, 0.15);
+    }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb-bar {
+      padding-top: 80px;
+      padding-bottom: 0;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #6B7280;
+      list-style: none;
+    }
+
+    .breadcrumb a {
+      color: #8B6914;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .breadcrumb a:hover {
+      color: #1A1A2E;
+    }
+
+    .breadcrumb-sep {
+      color: #9CA3AF;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding-top: 32px;
+      padding-bottom: 100px;
+      background: linear-gradient(180deg, #F5F0E8 0%, #FDFBF7 100%);
+    }
+
+    .hero-content {
+      max-width: 740px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #6B7280;
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: #1A1A2E;
+      color: #F5F0E8;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      background: #2D4A7A;
+      box-shadow: 0 12px 40px rgba(26, 26, 46, 0.15);
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* ===== SECTION DIVIDERS ===== */
+    .elegant-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(139, 105, 20, 0.15), rgba(45, 74, 122, 0.1), transparent);
+      border: none;
+      margin: 0;
+    }
+
+    /* ===== BENEFITS GRID ===== */
+    .benefits {
+      background: #FFFFFF;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: #FDFBF7;
+      border: 1px solid rgba(139, 105, 20, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .benefit-card:hover {
+      border-color: rgba(139, 105, 20, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(26, 26, 46, 0.06);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .benefit-card p {
+      color: #6B7280;
+      font-size: 0.95rem;
+    }
+
+    /* ===== PROCESS SECTION ===== */
+    .process {
+      background: #F5F0E8;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: #1A1A2E;
+      color: #C9A84C;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .process-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: #6B7280;
+      font-size: 0.9rem;
+    }
+
+    /* ===== FEATURES LIST ===== */
+    .features {
+      background: #FFFFFF;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 24px;
+      background: #FDFBF7;
+      border: 1px solid rgba(139, 105, 20, 0.08);
+      border-radius: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-item:hover {
+      border-color: rgba(139, 105, 20, 0.2);
+      box-shadow: 0 4px 20px rgba(26, 26, 46, 0.04);
+    }
+
+    .feature-item-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: rgba(139, 105, 20, 0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .feature-item-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .feature-item-text p {
+      font-size: 0.85rem;
+      color: #6B7280;
+    }
+
+    /* ===== SEO CONTENT ===== */
+    .seo-content {
+      background: #FDFBF7;
+    }
+
+    .seo-content-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .seo-content-inner h2 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .seo-content-inner h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-content-inner p {
+      color: #6B7280;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .seo-content-inner strong {
+      color: #3D3D4E;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: #1A1A2E;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: #F5F0E8;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      color: rgba(245, 240, 232, 0.7);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    .cta-section .accent { color: #C9A84C; }
+
+    .cta-button {
+      display: inline-block;
+      background: #C9A84C;
+      color: #1A1A2E;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201, 168, 76, 0.25);
+    }
+
+    .cta-note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: rgba(245, 240, 232, 0.5);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1A1A2E;
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #F5F0E8;
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: #C9A84C; }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(245, 240, 232, 0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.25s;
+    }
+
+    .footer-links a:hover { color: #C9A84C; }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      color: rgba(245, 240, 232, 0.3);
+      font-size: 0.8rem;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(245, 240, 232, 0.08);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+
+      .hero { padding-top: 24px; padding-bottom: 60px; }
+
+      .breadcrumb-bar { padding-top: 76px; }
+
+      .benefits-grid { grid-template-columns: 1fr; }
+
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+      .features-grid { grid-template-columns: 1fr; }
+
+      .cta-section { padding: 60px 0; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SUBTLE BG -->
+  <div class="bg-pattern"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/"><span itemprop="name">Accueil</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li class="breadcrumb-sep">&#8250;</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Cr&eacute;ation de site web</span>
+          <meta itemprop="position" content="2">
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="badge">Cr&eacute;ation de sites pour avocats</div>
+        <h1>Un site web professionnel qui <span class="accent">plaide en votre faveur</span></h1>
+        <p>Votre cabinet m&eacute;rite une vitrine num&eacute;rique &agrave; la hauteur de votre expertise. Nous concevons des sites web sur-mesure pour avocats&nbsp;: &eacute;l&eacute;gants, rapides, visibles sur Google et conformes au RGPD. Chaque d&eacute;tail est pens&eacute; pour transformer vos visiteurs en clients.</p>
+        <a href="/#audit" class="hero-cta">Demander mon audit gratuit</a>
+        <p class="hero-note">Audit offert sous 48h &middot; Sans engagement &middot; Devis sur-mesure</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- POURQUOI UN SITE PRO -->
+  <section class="benefits" id="avantages">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Pourquoi investir</div>
+        <h2>Pourquoi votre cabinet a besoin d'un <span class="accent">site professionnel</span></h2>
+        <p class="section-subtitle">70&nbsp;% des justiciables recherchent leur avocat en ligne. Votre site est souvent le premier contact avec vos futurs clients.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">&#9878;&#65039;</div>
+          <h3>Cr&eacute;dibilit&eacute; imm&eacute;diate</h3>
+          <p>Un design soign&eacute; inspire confiance d&egrave;s les premi&egrave;res secondes. Votre site refl&egrave;te le s&eacute;rieux et le professionnalisme de votre cabinet, exactement comme une plaidoirie bien structur&eacute;e.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">&#128200;</div>
+          <h3>Visibilit&eacute; sur Google</h3>
+          <p>Un site optimis&eacute; pour le r&eacute;f&eacute;rencement vous positionne sur les recherches &laquo;&nbsp;avocat + ville&nbsp;&raquo;. Vous captez les prospects qui cherchent un avocat dans votre sp&eacute;cialit&eacute; et votre zone g&eacute;ographique.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">&#127919;</div>
+          <h3>Conversion de visiteurs en clients</h3>
+          <p>Chaque page est con&ccedil;ue pour guider le visiteur vers la prise de rendez-vous. Formulaires de contact, num&eacute;ro d'appel visible, t&eacute;moignages&nbsp;: tout est pens&eacute; pour convertir.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">&#128241;</div>
+          <h3>Parfait sur mobile</h3>
+          <p>Plus de 53&nbsp;% des consultations se font sur smartphone. Votre site s'adapte &agrave; tous les &eacute;crans sans compromis sur l'exp&eacute;rience utilisateur ni la vitesse de chargement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- PROCESSUS -->
+  <section class="process" id="processus">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="badge">Notre m&eacute;thode</div>
+        <h2>De l'audit au lancement en <span class="accent">4&nbsp;&eacute;tapes</span></h2>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Un processus structur&eacute; et transparent, comme la conduite d'un dossier. Vous &ecirc;tes inform&eacute; &agrave; chaque &eacute;tape.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-number">1</div>
+          <h3>Audit &amp; strat&eacute;gie</h3>
+          <p>Analyse compl&egrave;te de votre pr&eacute;sence en ligne, de vos concurrents et de votre positionnement. Nous identifions vos forces et les opportunit&eacute;s &agrave; saisir.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">2</div>
+          <h3>Design sur-mesure</h3>
+          <p>Cr&eacute;ation de maquettes personnalis&eacute;es qui respectent l'identit&eacute; de votre cabinet. Vous validez chaque choix graphique avant le d&eacute;veloppement.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">3</div>
+          <h3>D&eacute;veloppement</h3>
+          <p>Int&eacute;gration technique avec les meilleures pratiques&nbsp;: performance, s&eacute;curit&eacute;, accessibilit&eacute; et optimisation SEO d&egrave;s la premi&egrave;re ligne de code.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">4</div>
+          <h3>Lancement &amp; suivi</h3>
+          <p>Mise en ligne, soumission aux moteurs de recherche, configuration analytique. Nous restons disponibles pour les ajustements et l'accompagnement post-lancement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- FONCTIONNALITES -->
+  <section class="features" id="fonctionnalites">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Inclus dans chaque site</div>
+        <h2>Tout ce dont votre cabinet a <span class="accent">besoin</span></h2>
+        <p class="section-subtitle">Chaque fonctionnalit&eacute; est pens&eacute;e pour r&eacute;pondre aux exigences sp&eacute;cifiques des cabinets d'avocats.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#128241;</div>
+          <div class="feature-item-text">
+            <h4>Responsive design</h4>
+            <p>Affichage impeccable sur desktop, tablette et smartphone. Aucun compromis sur l'exp&eacute;rience utilisateur.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#9889;</div>
+          <div class="feature-item-text">
+            <h4>Performance optimale</h4>
+            <p>Temps de chargement inf&eacute;rieur &agrave; 2 secondes. Un site rapide, c'est un meilleur classement Google et moins d'abandons.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#128269;</div>
+          <div class="feature-item-text">
+            <h4>SEO int&eacute;gr&eacute;</h4>
+            <p>Balises m&eacute;ta, structure s&eacute;mantique, schema.org pour avocats, sitemap XML. Votre site est pr&ecirc;t pour Google d&egrave;s le premier jour.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#128274;</div>
+          <div class="feature-item-text">
+            <h4>Conformit&eacute; RGPD</h4>
+            <p>Bandeau cookies, politique de confidentialit&eacute;, formulaires s&eacute;curis&eacute;s. Le respect de la r&eacute;glementation est une obligation, pas une option.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#128172;</div>
+          <div class="feature-item-text">
+            <h4>Formulaires de contact</h4>
+            <p>Formulaires intelligents avec s&eacute;lection de sp&eacute;cialit&eacute;, prise de rendez-vous en ligne et int&eacute;gration avec votre bo&icirc;te mail professionnelle.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-item-icon">&#128187;</div>
+          <div class="feature-item-text">
+            <h4>Gestion autonome</h4>
+            <p>Interface d'administration intuitive pour modifier vos textes, ajouter des articles de blog ou mettre &agrave; jour vos domaines de comp&eacute;tence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- SEO CONTENT -->
+  <section class="seo-content">
+    <div class="container">
+      <div class="seo-content-inner reveal">
+        <h2>Cr&eacute;ation de site web pour avocats&nbsp;: pourquoi c'est <span class="accent">indispensable</span> en 2025</h2>
+        <p>Le march&eacute; juridique fran&ccedil;ais conna&icirc;t une transformation profonde. Avec plus de <strong>70&nbsp;000 avocats inscrits au barreau</strong> et une concurrence croissante, disposer d'un site web professionnel n'est plus un luxe mais une n&eacute;cessit&eacute; strat&eacute;gique. La majorit&eacute; des justiciables commencent d&eacute;sormais leur recherche d'avocat en ligne, et le premier r&eacute;flexe est de taper une requ&ecirc;te sur Google ou de poser la question &agrave; une intelligence artificielle comme ChatGPT.</p>
+
+        <p>Un <strong>site web pour avocat</strong> ne se limite pas &agrave; une simple carte de visite num&eacute;rique. C'est un v&eacute;ritable outil de d&eacute;veloppement commercial qui travaille pour votre cabinet 24 heures sur 24, 7 jours sur 7. Alors que vous plaidez au tribunal, votre site continue d'accueillir des prospects, de r&eacute;pondre &agrave; leurs premi&egrave;res questions et de les orienter vers une prise de contact.</p>
+
+        <h2>Ce que nous offrons aux cabinets <span class="accent">d'avocats</span></h2>
+        <p>Chez TonSiteWebPro, nous comprenons les sp&eacute;cificit&eacute;s de la profession juridique. La d&eacute;ontologie, le secret professionnel et l'image de marque sont au c&oelig;ur de chaque d&eacute;cision que nous prenons. Nos sites sont con&ccedil;us pour refl&eacute;ter <strong>l'autorit&eacute; et la comp&eacute;tence</strong> de votre cabinet, tout en restant accessibles et engageants pour vos futurs clients.</p>
+
+        <p>Chaque site que nous cr&eacute;ons b&eacute;n&eacute;ficie d'une <strong>architecture SEO pens&eacute;e pour le r&eacute;f&eacute;rencement local</strong>. Cela signifie que lorsqu'un justiciable recherche &laquo;&nbsp;avocat divorce Lyon&nbsp;&raquo; ou &laquo;&nbsp;cabinet droit du travail Paris&nbsp;&raquo;, votre site a toutes les chances d'appara&icirc;tre en premi&egrave;re page. Nous int&eacute;grons &eacute;galement les donn&eacute;es structur&eacute;es schema.org sp&eacute;cifiques aux professions juridiques, ce qui permet &agrave; Google d'afficher des informations enrichies dans ses r&eacute;sultats.</p>
+
+        <p>La <strong>conformit&eacute; RGPD</strong> est int&eacute;gr&eacute;e d&egrave;s la conception. En tant qu'avocat, vous savez mieux que quiconque l'importance du respect de la r&eacute;glementation. Nous nous assurons que chaque formulaire, chaque cookie, chaque traitement de donn&eacute;es est conforme aux exigences l&eacute;gales europ&eacute;ennes.</p>
+
+        <h2>Un investissement qui <span class="accent">rapporte</span></h2>
+        <p>Le co&ucirc;t d'acquisition d'un nouveau client par le bouche-&agrave;-oreille est souvent sous-estim&eacute;. Un site web bien r&eacute;f&eacute;renc&eacute; g&eacute;n&egrave;re un flux r&eacute;gulier de prospects qualifi&eacute;s, r&eacute;duisant ainsi votre d&eacute;pendance au r&eacute;seau personnel. En moyenne, un cabinet qui investit dans un site optimis&eacute; constate une <strong>augmentation de 40 &agrave; 60&nbsp;% de ses demandes de contact en ligne</strong> dans les six premiers mois.</p>
+
+        <p>De plus, avec la mont&eacute;e en puissance des IA conversationnelles, votre pr&eacute;sence en ligne d&eacute;passe d&eacute;sormais Google. <strong>ChatGPT, Perplexity et d'autres assistants IA</strong> recommandent d&eacute;sormais des cabinets d'avocats en se basant sur le contenu disponible sur le web. Un site riche en contenu pertinent et bien structur&eacute; augmente vos chances d'&ecirc;tre cit&eacute; par ces nouveaux canaux de recommandation.</p>
+
+        <p>Votre expertise juridique m&eacute;rite d'&ecirc;tre mise en valeur avec la m&ecirc;me rigueur que celle que vous appliquez &agrave; vos dossiers. Nous sommes l&agrave; pour construire la vitrine num&eacute;rique qui refl&egrave;te v&eacute;ritablement la qualit&eacute; de votre travail.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge" style="background:rgba(201,168,76,0.15);color:#C9A84C;border-color:rgba(201,168,76,0.25);">Passez &agrave; l'action</div>
+        <h2>Pr&ecirc;t &agrave; donner &agrave; votre cabinet la <span class="accent">pr&eacute;sence qu'il m&eacute;rite</span>&nbsp;?</h2>
+        <p>Comme une premi&egrave;re consultation juridique, notre audit est gratuit et sans engagement. Vous repartez avec un diagnostic clair et des recommandations concr&egrave;tes.</p>
+        <a href="/#audit" class="cta-button">Demander mon audit gratuit</a>
+        <p class="cta-note">R&eacute;sultats sous 48h &middot; Sans engagement &middot; Aucune clause cach&eacute;e</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Nav shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

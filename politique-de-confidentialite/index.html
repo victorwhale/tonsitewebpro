@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialit&eacute; | TonSiteWebPro</title>
+  <meta name="description" content="Politique de confidentialit&eacute; de TonSiteWebPro. Informations sur la collecte, l'utilisation et la protection de vos donn&eacute;es personnelles, conform&eacute;ment au RGPD.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7; color: #3D3D4E; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
+    }
+
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+
+    nav, section, footer { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; margin-bottom: 16px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta {
+      background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+
+    .elegant-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent);
+      border: none; margin: 0;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 140px; padding-bottom: 60px;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 1.1rem; color: #6B7280; max-width: 640px; }
+
+    /* LEGAL CONTENT */
+    .legal-section { background: #FFFFFF; }
+    .legal-content { max-width: 800px; margin: 0 auto; }
+    .legal-block { margin-bottom: 48px; }
+    .legal-block h2 { margin-top: 0; }
+    .legal-block p { font-size: 0.95rem; color: #3D3D4E; margin-bottom: 16px; line-height: 1.8; }
+    .legal-block ul {
+      list-style: none; padding: 0; margin-bottom: 16px;
+    }
+    .legal-block ul li {
+      position: relative; padding-left: 24px; font-size: 0.95rem; color: #3D3D4E;
+      margin-bottom: 10px; line-height: 1.7;
+    }
+    .legal-block ul li::before {
+      content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px;
+      background: rgba(139,105,20,0.3); border-radius: 50%;
+    }
+    .legal-block a { color: #8B6914; text-decoration: none; transition: color 0.25s; }
+    .legal-block a:hover { color: #6B5010; }
+    .legal-updated {
+      font-size: 0.85rem; color: #9CA3AF; font-style: italic; margin-top: 48px;
+      padding-top: 24px; border-top: 1px solid rgba(139,105,20,0.1);
+    }
+
+    /* FOOTER */
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #F5F0E8; text-decoration: none;
+    }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy {
+      width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem;
+      margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .page-header { padding-top: 120px; padding-bottom: 48px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Vos donn&eacute;es, notre responsabilit&eacute;</div>
+        <h1>Politique de <span class="accent">confidentialit&eacute;</span></h1>
+        <p>Nous traitons vos donn&eacute;es personnelles avec la m&ecirc;me rigueur que vous traitez celles de vos clients. Transparence totale, conform&eacute;ment au RGPD.</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="elegant-divider">
+
+  <!-- LEGAL CONTENT -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-content">
+
+        <div class="legal-block reveal">
+          <h2>1. <span class="accent">Responsable du traitement</span></h2>
+          <p>Le responsable du traitement des donn&eacute;es personnelles collect&eacute;es sur le site tonsitewebpro.com est&nbsp;:</p>
+          <p><strong>TonSiteWebPro</strong><br>
+          Email&nbsp;: <a href="mailto:victor@jaikin.eu">victor@jaikin.eu</a></p>
+          <p>Pour toute question relative &agrave; la protection de vos donn&eacute;es personnelles, vous pouvez nous contacter &agrave; l'adresse email ci-dessus.</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>2. <span class="accent">Donn&eacute;es collect&eacute;es</span></h2>
+          <p>Nous collectons les donn&eacute;es personnelles que vous nous fournissez volontairement lors de l'utilisation de notre site, notamment&nbsp;:</p>
+          <ul>
+            <li><strong>Donn&eacute;es d'identification</strong>&nbsp;: nom, pr&eacute;nom, nom du cabinet d'avocats</li>
+            <li><strong>Donn&eacute;es de contact</strong>&nbsp;: adresse email professionnelle, num&eacute;ro de t&eacute;l&eacute;phone</li>
+            <li><strong>Donn&eacute;es professionnelles</strong>&nbsp;: sp&eacute;cialit&eacute; juridique, URL du site web actuel</li>
+            <li><strong>Contenu des messages</strong>&nbsp;: toute information que vous nous communiquez via nos formulaires de contact</li>
+            <li><strong>Donn&eacute;es de navigation</strong>&nbsp;: adresse IP, type de navigateur, pages visit&eacute;es, dur&eacute;e de visite</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>3. <span class="accent">Finalit&eacute;s du traitement</span></h2>
+          <p>Vos donn&eacute;es personnelles sont collect&eacute;es et trait&eacute;es pour les finalit&eacute;s suivantes&nbsp;:</p>
+          <ul>
+            <li>R&eacute;pondre &agrave; vos demandes de contact et d'audit gratuit</li>
+            <li>Vous fournir nos services de cr&eacute;ation de sites web et de r&eacute;f&eacute;rencement</li>
+            <li>Vous envoyer des informations relatives &agrave; nos services (uniquement avec votre consentement)</li>
+            <li>Am&eacute;liorer notre site web et l'exp&eacute;rience utilisateur</li>
+            <li>Respecter nos obligations l&eacute;gales et r&eacute;glementaires</li>
+          </ul>
+          <p>La base l&eacute;gale du traitement est votre consentement (article 6.1.a du RGPD) pour les formulaires de contact, et notre int&eacute;r&ecirc;t l&eacute;gitime (article 6.1.f du RGPD) pour l'am&eacute;lioration de nos services.</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>4. <span class="accent">Dur&eacute;e de conservation</span></h2>
+          <p>Vos donn&eacute;es personnelles sont conserv&eacute;es pour une dur&eacute;e proportionn&eacute;e aux finalit&eacute;s pour lesquelles elles sont trait&eacute;es&nbsp;:</p>
+          <ul>
+            <li><strong>Donn&eacute;es de contact et demandes d'audit</strong>&nbsp;: 3 ans &agrave; compter du dernier contact</li>
+            <li><strong>Donn&eacute;es clients</strong>&nbsp;: pendant la dur&eacute;e de la relation contractuelle, puis 5 ans &agrave; des fins de preuve</li>
+            <li><strong>Donn&eacute;es de navigation</strong>&nbsp;: 13 mois maximum</li>
+          </ul>
+          <p>Au-del&agrave; de ces dur&eacute;es, vos donn&eacute;es sont supprim&eacute;es ou anonymis&eacute;es de mani&egrave;re irr&eacute;versible.</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>5. <span class="accent">Destinataires des donn&eacute;es</span></h2>
+          <p>Vos donn&eacute;es personnelles sont destin&eacute;es uniquement &agrave; TonSiteWebPro. Elles ne sont jamais vendues, lou&eacute;es ou c&eacute;d&eacute;es &agrave; des tiers &agrave; des fins commerciales.</p>
+          <p>Les donn&eacute;es peuvent &ecirc;tre partag&eacute;es avec nos sous-traitants techniques (h&eacute;bergement, envoi d'emails) qui agissent sur nos instructions et sont soumis &agrave; des obligations de confidentialit&eacute; et de s&eacute;curit&eacute;.</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>6. <span class="accent">S&eacute;curit&eacute; des donn&eacute;es</span></h2>
+          <p>Nous mettons en &oelig;uvre les mesures techniques et organisationnelles appropri&eacute;es pour garantir la s&eacute;curit&eacute; de vos donn&eacute;es personnelles&nbsp;:</p>
+          <ul>
+            <li>Chiffrement des donn&eacute;es en transit (protocole HTTPS/TLS)</li>
+            <li>H&eacute;bergement s&eacute;curis&eacute; en France aupr&egrave;s de prestataires certifi&eacute;s</li>
+            <li>Acc&egrave;s restreint aux donn&eacute;es personnelles</li>
+            <li>Sauvegardes r&eacute;guli&egrave;res et proc&eacute;dures de r&eacute;cup&eacute;ration</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>7. <span class="accent">Politique relative aux cookies</span></h2>
+          <p>Notre site peut utiliser des cookies pour am&eacute;liorer votre exp&eacute;rience de navigation. Les cookies sont de petits fichiers texte stock&eacute;s sur votre appareil.</p>
+          <p><strong>Cookies strictement n&eacute;cessaires</strong>&nbsp;: indispensables au fonctionnement du site. Ils ne n&eacute;cessitent pas votre consentement.</p>
+          <p><strong>Cookies analytiques</strong>&nbsp;: nous permettent de mesurer l'audience de notre site et d'am&eacute;liorer nos services. Ils ne sont d&eacute;pos&eacute;s qu'avec votre consentement pr&eacute;alable.</p>
+          <p>Vous pouvez &agrave; tout moment g&eacute;rer vos pr&eacute;f&eacute;rences en mati&egrave;re de cookies via les param&egrave;tres de votre navigateur. La d&eacute;sactivation de certains cookies peut affecter votre exp&eacute;rience de navigation.</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>8. <span class="accent">Vos droits</span></h2>
+          <p>Conform&eacute;ment au R&egrave;glement G&eacute;n&eacute;ral sur la Protection des Donn&eacute;es (RGPD), vous disposez des droits suivants sur vos donn&eacute;es personnelles&nbsp;:</p>
+          <ul>
+            <li><strong>Droit d'acc&egrave;s</strong>&nbsp;: obtenir la confirmation que vos donn&eacute;es sont trait&eacute;es et acc&eacute;der aux donn&eacute;es vous concernant</li>
+            <li><strong>Droit de rectification</strong>&nbsp;: demander la correction de donn&eacute;es inexactes ou incompl&egrave;tes</li>
+            <li><strong>Droit &agrave; l'effacement</strong>&nbsp;: demander la suppression de vos donn&eacute;es personnelles</li>
+            <li><strong>Droit &agrave; la limitation du traitement</strong>&nbsp;: demander la suspension du traitement de vos donn&eacute;es</li>
+            <li><strong>Droit &agrave; la portabilit&eacute;</strong>&nbsp;: recevoir vos donn&eacute;es dans un format structur&eacute; et lisible</li>
+            <li><strong>Droit d'opposition</strong>&nbsp;: vous opposer au traitement de vos donn&eacute;es &agrave; tout moment</li>
+            <li><strong>Droit de retrait du consentement</strong>&nbsp;: retirer votre consentement &agrave; tout moment sans affecter la lic&eacute;it&eacute; du traitement ant&eacute;rieur</li>
+          </ul>
+          <p>Pour exercer vos droits, contactez-nous &agrave;&nbsp;: <a href="mailto:victor@jaikin.eu">victor@jaikin.eu</a></p>
+          <p>Nous nous engageons &agrave; r&eacute;pondre &agrave; votre demande dans un d&eacute;lai maximum d'un mois. Si vous estimez que vos droits ne sont pas respect&eacute;s, vous pouvez introduire une r&eacute;clamation aupr&egrave;s de la Commission Nationale de l'Informatique et des Libert&eacute;s (CNIL)&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>9. <span class="accent">Transferts de donn&eacute;es</span></h2>
+          <p>Vos donn&eacute;es personnelles sont h&eacute;berg&eacute;es en France. En cas de transfert vers un pays tiers, nous nous assurons que des garanties ad&eacute;quates sont mises en place conform&eacute;ment au RGPD (clauses contractuelles types, d&eacute;cisions d'ad&eacute;quation, etc.).</p>
+        </div>
+
+        <div class="legal-block reveal">
+          <h2>10. <span class="accent">Modifications</span></h2>
+          <p>Nous nous r&eacute;servons le droit de modifier la pr&eacute;sente politique de confidentialit&eacute; &agrave; tout moment. Toute modification sera publi&eacute;e sur cette page avec la date de mise &agrave; jour. Nous vous invitons &agrave; consulter r&eacute;guli&egrave;rement cette page.</p>
+        </div>
+
+        <p class="legal-updated reveal">Derni&egrave;re mise &agrave; jour&nbsp;: f&eacute;vrier 2025</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+
+</body>
+</html>

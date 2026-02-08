@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | TonSiteWebPro - Agence web pour avocats</title>
+  <meta name="description" content="Contactez TonSiteWebPro pour discuter de votre projet de site web pour cabinet d'avocats. Audit gratuit, r&eacute;ponse sous 48h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7;
+      color: #3D3D4E;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg-pattern {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+
+    nav, section, footer, main { position: relative; z-index: 1; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+    .section-subtitle { color: #6B7280; font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta {
+      background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+
+    .elegant-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent);
+      border: none; margin: 0;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 140px; padding-bottom: 60px;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 1.1rem; color: #6B7280; max-width: 600px; }
+
+    /* CONTACT LAYOUT */
+    .contact-grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start;
+    }
+
+    /* FORM */
+    .form-wrapper {
+      background: #FDFBF7; border: 1px solid rgba(139,105,20,0.12); border-radius: 20px;
+      padding: 40px 36px; box-shadow: 0 4px 24px rgba(26,26,46,0.04);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #3D3D4E; margin-bottom: 6px; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 10px;
+      padding: 14px 16px; font-size: 0.95rem; color: #1A1A2E; font-family: inherit;
+      transition: border-color 0.25s, box-shadow 0.25s; outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #9CA3AF; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: #8B6914; box-shadow: 0 0 0 3px rgba(139,105,20,0.1); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; background: #1A1A2E; color: #F5F0E8; font-weight: 700; font-size: 1rem;
+      padding: 16px; border: none; border-radius: 10px; cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s; margin-top: 8px; font-family: inherit;
+    }
+    .form-submit:hover { transform: translateY(-2px); background: #2D4A7A; box-shadow: 0 12px 40px rgba(26,26,46,0.12); }
+    .form-note { text-align: center; color: #9CA3AF; font-size: 0.85rem; margin-top: 20px; }
+
+    /* CONTACT INFO */
+    .contact-info-card {
+      background: #FFFFFF; border: 1px solid rgba(139,105,20,0.1); border-radius: 16px;
+      padding: 32px; margin-bottom: 24px;
+    }
+    .contact-info-card h3 {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 20px;
+    }
+    .contact-info-item {
+      display: flex; gap: 14px; align-items: center; padding: 14px 0;
+      border-bottom: 1px solid rgba(139,105,20,0.06);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-info-icon {
+      flex-shrink: 0; width: 44px; height: 44px; background: rgba(139,105,20,0.08);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .contact-info-text { font-size: 0.95rem; }
+    .contact-info-text strong { display: block; color: #1A1A2E; font-weight: 600; margin-bottom: 2px; }
+    .contact-info-text a { color: #8B6914; text-decoration: none; transition: color 0.25s; }
+    .contact-info-text a:hover { color: #6B5010; }
+
+    /* FAQ */
+    .faq-section { background: #F5F0E8; }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .faq-item {
+      background: #FFFFFF; border: 1px solid rgba(139,105,20,0.08); border-radius: 16px; padding: 28px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(139,105,20,0.2); box-shadow: 0 4px 20px rgba(26,26,46,0.04); }
+    .faq-item h3 {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 10px; color: #1A1A2E;
+    }
+    .faq-item p { font-size: 0.92rem; color: #6B7280; line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #F5F0E8; text-decoration: none;
+    }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy {
+      width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem;
+      margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .page-header { padding-top: 120px; padding-bottom: 48px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-wrapper { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Parlons de votre cabinet</div>
+        <h1>Contactez <span class="accent">TonSiteWebPro</span></h1>
+        <p>Une question, un projet de site pour votre cabinet d'avocats&nbsp;? &Eacute;crivez-nous. Nous r&eacute;pondons sous 48h, comme un bon avocat respecte ses d&eacute;lais.</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="elegant-divider">
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div class="form-wrapper reveal">
+          <form action="https://formsubmit.co/victor@jaikin.eu" method="POST" class="form-grid">
+            <input type="hidden" name="_subject" value="Nouveau message de contact - TonSiteWebPro">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tonsitewebpro-2a2206bdfe0c.herokuapp.com/contact/#merci">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Ma&icirc;tre Dupont" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email professionnel</label>
+                <input type="email" id="email" name="email" placeholder="contact@votrecabinet.fr" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">T&eacute;l&eacute;phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+              </div>
+              <div class="form-group">
+                <label for="cabinet">Nom du cabinet</label>
+                <input type="text" id="cabinet" name="cabinet" placeholder="Cabinet Dupont & Associ&eacute;s">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" placeholder="D&eacute;crivez votre projet, vos besoins, vos objectifs pour votre site web..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Envoyer mon message</button>
+          </form>
+          <p class="form-note">R&eacute;ponse garantie sous 48h. Pas de d&eacute;marchage, pas de spam.</p>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="reveal">
+          <div class="contact-info-card">
+            <h3>Nos coordonn&eacute;es</h3>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#9993;</div>
+              <div class="contact-info-text">
+                <strong>Email</strong>
+                <a href="mailto:victor@jaikin.eu">victor@jaikin.eu</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#9203;</div>
+              <div class="contact-info-text">
+                <strong>D&eacute;lai de r&eacute;ponse</strong>
+                Sous 48 heures ouvr&eacute;es
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#127758;</div>
+              <div class="contact-info-text">
+                <strong>Zone d'intervention</strong>
+                France enti&egrave;re (100% en ligne)
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <h3>Pourquoi nous contacter&nbsp;?</h3>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#9878;&#65039;</div>
+              <div class="contact-info-text">
+                <strong>Cr&eacute;ation de site pour cabinet</strong>
+                Design sur-mesure adapt&eacute; &agrave; votre sp&eacute;cialit&eacute; juridique
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#128200;</div>
+              <div class="contact-info-text">
+                <strong>R&eacute;f&eacute;rencement SEO juridique</strong>
+                Visibilit&eacute; sur Google et les IA pour avocats
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">&#128269;</div>
+              <div class="contact-info-text">
+                <strong>Audit de site existant</strong>
+                Diagnostic complet de votre pr&eacute;sence en ligne
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Questions fr&eacute;quentes</div>
+        <h2>Comment se d&eacute;roule <span class="accent">notre collaboration</span>&nbsp;?</h2>
+        <p class="section-subtitle">Tout ce que vous devez savoir avant de nous confier votre dossier num&eacute;rique.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h3>Quel est le d&eacute;lai de r&eacute;alisation&nbsp;?</h3>
+          <p>Un site complet pour cabinet d'avocats est g&eacute;n&eacute;ralement livr&eacute; entre 3 et 6 semaines, selon la complexit&eacute; du projet. Nous fixons un calendrier pr&eacute;cis d&egrave;s le d&eacute;part, comme un r&eacute;troplanification juridique.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Comment se passe la premi&egrave;re &eacute;tape&nbsp;?</h3>
+          <p>Apr&egrave;s votre demande d'audit gratuit, nous analysons votre site actuel et votre positionnement. Ensuite, nous organisons un appel de 30 minutes pour pr&eacute;senter nos recommandations et discuter de vos objectifs.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Dois-je fournir les textes&nbsp;?</h3>
+          <p>Non. Nous r&eacute;digeons l'ensemble des contenus optimis&eacute;s pour le r&eacute;f&eacute;rencement, en respectant la d&eacute;ontologie de votre profession. Vous validez avant publication, comme pour des conclusions.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Puis-je modifier le site moi-m&ecirc;me&nbsp;?</h3>
+          <p>Absolument. Nous int&eacute;grons un syst&egrave;me de gestion simple. Vous pourrez mettre &agrave; jour vos actualit&eacute;s, vos domaines de comp&eacute;tence ou vos coordonn&eacute;es en toute autonomie.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Le site sera-t-il conforme au RGPD&nbsp;?</h3>
+          <p>Bien s&ucirc;r. Tous nos sites respectent le RGPD et les r&egrave;gles d&eacute;ontologiques de la profession d'avocat. Politique de confidentialit&eacute;, mentions l&eacute;gales et cookies sont g&eacute;r&eacute;s pour vous.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Quels sont les tarifs&nbsp;?</h3>
+          <p>La majorit&eacute; de nos projets se situent entre 2&nbsp;400&nbsp;&euro; et 3&nbsp;400&nbsp;&euro;&nbsp;HT. Chaque devis est personnalis&eacute; apr&egrave;s l'audit gratuit. Paiement en 2 ou 3 fois possible. Aucune surprise sur la facture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | TonSiteWebPro - Conseils web et SEO pour avocats</title>
+  <meta name="description" content="Articles et conseils sur la cr&eacute;ation de sites web, le r&eacute;f&eacute;rencement SEO et la strat&eacute;gie digitale pour cabinets d'avocats.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7; color: #3D3D4E; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
+    }
+
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+
+    nav, section, footer { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+    .section-subtitle { color: #6B7280; font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta {
+      background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+
+    .elegant-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent);
+      border: none; margin: 0;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 140px; padding-bottom: 60px;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 1.1rem; color: #6B7280; max-width: 640px; }
+
+    /* BLOG GRID */
+    .blog-section { background: #FFFFFF; }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;
+    }
+    .blog-card {
+      background: #FDFBF7; border: 1px solid rgba(139,105,20,0.1); border-radius: 18px;
+      padding: 32px; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .blog-card:hover {
+      border-color: rgba(139,105,20,0.3); transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(26,26,46,0.07);
+    }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .blog-card-category {
+      display: inline-block; background: rgba(139,105,20,0.1); color: #8B6914;
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .blog-card-date { font-size: 0.82rem; color: #9CA3AF; }
+    .blog-card h3 {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 12px; color: #1A1A2E; line-height: 1.4;
+    }
+    .blog-card p { font-size: 0.92rem; color: #6B7280; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+    .blog-card-link {
+      font-size: 0.85rem; color: #8B6914; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .blog-card-link svg { transition: transform 0.25s; }
+    .blog-card:hover .blog-card-link svg { transform: translateX(4px); }
+
+    /* CATEGORIES BAR */
+    .categories-bar {
+      display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .category-link {
+      display: inline-block; background: rgba(139,105,20,0.06); color: #8B6914;
+      font-size: 0.85rem; font-weight: 600; padding: 8px 20px; border-radius: 100px;
+      text-decoration: none; border: 1px solid rgba(139,105,20,0.12);
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .category-link:hover { background: rgba(139,105,20,0.12); border-color: rgba(139,105,20,0.25); }
+
+    /* FOOTER */
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #F5F0E8; text-decoration: none;
+    }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy {
+      width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem;
+      margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .page-header { padding-top: 120px; padding-bottom: 48px; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Ressources pour avocats</div>
+        <h1>Le <span class="accent">blog</span> TonSiteWebPro</h1>
+        <p>Conseils, tendances et guides pratiques pour optimiser la pr&eacute;sence en ligne de votre cabinet d'avocats. R&eacute;f&eacute;rencement, cr&eacute;ation de site, strat&eacute;gie digitale&nbsp;: tout y est.</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="elegant-divider">
+
+  <!-- BLOG LISTING -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="categories-bar">
+          <a href="/category/referencement-seo/" class="category-link">R&eacute;f&eacute;rencement SEO</a>
+          <a href="/category/conseils-pratiques/" class="category-link">Conseils pratiques</a>
+        </div>
+      </div>
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <a href="/les-tendances-seo-a-suivre-en-2025-ce-qui-change-pour-votre-site-web/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">R&eacute;f&eacute;rencement SEO</span>
+            <span class="blog-card-date">15 janvier 2025</span>
+          </div>
+          <h3>Les tendances SEO &agrave; suivre en 2025&nbsp;: ce qui change pour votre site web</h3>
+          <p>D&eacute;couvrez les &eacute;volutions majeures du r&eacute;f&eacute;rencement en 2025 et comment adapter la strat&eacute;gie digitale de votre cabinet d'avocats pour rester visible sur Google.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="/comment-choisir-un-hebergeur-web-en-2025-5-criteres-essentiels/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Conseils pratiques</span>
+            <span class="blog-card-date">10 janvier 2025</span>
+          </div>
+          <h3>Comment choisir un h&eacute;bergeur web en 2025&nbsp;: 5 crit&egrave;res essentiels</h3>
+          <p>Le choix de l'h&eacute;bergeur est crucial pour la performance et la s&eacute;curit&eacute; du site de votre cabinet. Voici les 5 crit&egrave;res &agrave; &eacute;valuer avant de vous engager.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="/comment-creer-un-site-web-en-2025-guide-complet-pour-les-debutants/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Conseils pratiques</span>
+            <span class="blog-card-date">5 janvier 2025</span>
+          </div>
+          <h3>Comment cr&eacute;er un site web en 2025&nbsp;: guide complet pour les d&eacute;butants</h3>
+          <p>Vous envisagez de cr&eacute;er ou refondre le site de votre cabinet&nbsp;? Ce guide complet vous accompagne &eacute;tape par &eacute;tape, de la conception au lancement.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Article 4 -->
+        <a href="/referencement-seo-en-2025-le-guide-ultime-pour-booster-votre-site-sur-google/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">R&eacute;f&eacute;rencement SEO</span>
+            <span class="blog-card-date">28 d&eacute;cembre 2024</span>
+          </div>
+          <h3>R&eacute;f&eacute;rencement SEO en 2025&nbsp;: le guide ultime pour booster votre site sur Google</h3>
+          <p>Ma&icirc;trisez les fondamentaux du SEO pour positionner le site de votre cabinet en t&ecirc;te des r&eacute;sultats Google. Strat&eacute;gies &eacute;prouv&eacute;es et actions concr&egrave;tes.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Article 5 -->
+        <a href="/lintelligence-artificielle-revolutionner-la-creation-de-sites-web-et-le-seo/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">R&eacute;f&eacute;rencement SEO</span>
+            <span class="blog-card-date">20 d&eacute;cembre 2024</span>
+          </div>
+          <h3>L'intelligence artificielle r&eacute;volutionner la cr&eacute;ation de sites web et le SEO</h3>
+          <p>ChatGPT, Perplexity, Google AI&nbsp;: comment l'IA transforme la visibilit&eacute; en ligne des cabinets d'avocats et pourquoi votre site doit s'adapter d&egrave;s maintenant.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Article 6 -->
+        <a href="/pourquoi-creer-un-site-wordpress-en-2025-avantages-tendances-et-conseils-pratiques/" class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Conseils pratiques</span>
+            <span class="blog-card-date">15 d&eacute;cembre 2024</span>
+          </div>
+          <h3>Pourquoi cr&eacute;er un site WordPress en 2025&nbsp;: avantages, tendances et conseils pratiques</h3>
+          <p>WordPress reste la plateforme de r&eacute;f&eacute;rence pour les cabinets d'avocats. D&eacute;couvrez ses avantages, les tendances 2025 et nos conseils pour un site performant.</p>
+          <span class="blog-card-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+
+</body>
+</html>

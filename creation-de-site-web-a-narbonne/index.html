@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cr&eacute;ation de Site Web pour Avocats &agrave; Narbonne | TonSiteWebPro</title>
+  <meta name="description" content="Agence de cr&eacute;ation de sites web pour avocats &agrave; Narbonne. Design haut de gamme, r&eacute;f&eacute;rencement local Aude et accompagnement d&eacute;di&eacute;. Audit gratuit.">
+  <link rel="canonical" href="https://tonsitewebpro.com/creation-de-site-web-a-narbonne/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FDFBF7; color: #3D3D4E; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
+    }
+
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-pattern::before {
+      content: ''; position: absolute; width: 900px; height: 900px; top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(184,156,107,0.06) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite;
+    }
+    .bg-pattern::after {
+      content: ''; position: absolute; width: 700px; height: 700px; bottom: -10%; left: -10%;
+      background: radial-gradient(circle, rgba(45,74,122,0.04) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite reverse; animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-30px) scale(1.03); }
+      66% { transform: translate(-20px,20px) scale(0.97); }
+    }
+
+    nav, section, footer, .breadcrumb-bar { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+    h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+    .section-subtitle { color: #6B7280; font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
+    .accent { color: #8B6914; }
+    .badge {
+      display: inline-block; background: rgba(139,105,20,0.08); color: #8B6914;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(139,105,20,0.15); margin-bottom: 16px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,251,247,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139,105,20,0.08); transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,46,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700;
+      color: #1A1A2E; text-decoration: none; letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: #8B6914; }
+    .nav-cta {
+      background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+
+    .breadcrumb-bar { background: #F5F0E8; padding: 14px 0; margin-top: 64px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #6B7280; flex-wrap: wrap; }
+    .breadcrumb a { color: #8B6914; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span.sep { color: #9CA3AF; }
+
+    .hero { padding-top: 60px; padding-bottom: 80px; background: linear-gradient(180deg, #F5F0E8 0%, #FDFBF7 100%); }
+    .hero-content { max-width: 740px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .hero p { font-size: clamp(1rem, 2vw, 1.1rem); color: #6B7280; max-width: 600px; margin-bottom: 28px; line-height: 1.8; }
+    .hero-cta {
+      display: inline-block; background: #1A1A2E; color: #F5F0E8; font-weight: 700; font-size: 1rem;
+      padding: 16px 36px; border-radius: 10px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); background: #2D4A7A; box-shadow: 0 12px 40px rgba(26,26,46,0.15); }
+    .hero-note { margin-top: 14px; font-size: 0.85rem; color: #9CA3AF; }
+
+    .elegant-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(139,105,20,0.15), rgba(45,74,122,0.1), transparent); border: none; margin: 0; }
+
+    .why-section { background: #FFFFFF; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .why-card {
+      background: #FDFBF7; border: 1px solid rgba(139,105,20,0.1); border-radius: 16px; padding: 32px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .why-card:hover { border-color: rgba(139,105,20,0.25); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,26,46,0.06); }
+    .why-icon { font-size: 2rem; margin-bottom: 16px; }
+    .why-card p { color: #6B7280; font-size: 0.95rem; }
+
+    .services-section { background: #F5F0E8; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .service-card {
+      background: #FFFFFF; border: 1px solid rgba(139,105,20,0.1); border-radius: 16px; padding: 32px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover { border-color: rgba(139,105,20,0.25); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,26,46,0.06); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .service-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .service-card p { color: #6B7280; font-size: 0.9rem; }
+
+    .process-section { background: #FFFFFF; }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+    .process-step { text-align: center; }
+    .step-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%; background: #1A1A2E; color: #C9A84C;
+      font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 18px;
+    }
+    .process-step h3 { font-size: 1rem; margin-bottom: 8px; }
+    .process-step p { color: #6B7280; font-size: 0.9rem; }
+
+    .local-section { background: #F5F0E8; }
+    .local-content { max-width: 760px; }
+    .local-content p { color: #6B7280; font-size: 1rem; margin-bottom: 18px; line-height: 1.8; }
+
+    .faq-section { background: #FFFFFF; }
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid rgba(139,105,20,0.1); padding: 28px 0; }
+    .faq-item:first-child { border-top: 1px solid rgba(139,105,20,0.1); }
+    .faq-question { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 700; color: #1A1A2E; margin-bottom: 12px; }
+    .faq-answer { color: #6B7280; font-size: 0.95rem; line-height: 1.8; }
+
+    .cta-section { background: #1A1A2E; padding: 80px 0; text-align: center; }
+    .cta-section h2 { color: #F5F0E8; margin-bottom: 16px; }
+    .cta-section p { color: rgba(245,240,232,0.7); font-size: 1.05rem; max-width: 560px; margin: 0 auto 32px; }
+    .cta-btn {
+      display: inline-block; background: #8B6914; color: #FDFBF7; font-weight: 700; font-size: 1rem;
+      padding: 16px 40px; border-radius: 10px; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,105,20,0.3); }
+
+    footer { background: #1A1A2E; padding: 48px 0 32px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; text-decoration: none; }
+    .footer-logo span { color: #C9A84C; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: #C9A84C; }
+    .footer-copy { width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08); }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .hero { padding-top: 40px; padding-bottom: 60px; }
+      .why-grid, .services-grid, .process-steps { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) { .container { padding: 0 16px; } }
+  </style>
+</head>
+<body>
+
+  <div class="bg-pattern"></div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <a href="/#audit" class="nav-cta">Audit gratuit</a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span class="sep">&rsaquo;</span>
+        <a href="/creation-de-site/">Cr&eacute;ation de site</a>
+        <span class="sep">&rsaquo;</span>
+        <span>Narbonne</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="badge">Narbonne &middot; Aude</div>
+        <h1>Cr&eacute;ation de Site Web pour Avocats &agrave; <span class="accent">Narbonne</span></h1>
+        <p>Sous-pr&eacute;fecture de l'Aude et carrefour historique entre Toulouse et la M&eacute;diterran&eacute;e, Narbonne est une ville o&ugrave; la vie juridique est intense malgr&eacute; sa taille modeste. Les avocats narbonnais qui souhaitent d&eacute;velopper leur client&egrave;le doivent aujourd'hui ma&icirc;triser leur pr&eacute;sence num&eacute;rique. Un site web bien con&ccedil;u est la fondation de cette strat&eacute;gie.</p>
+        <a href="/#audit" class="hero-cta">Demander mon audit gratuit</a>
+        <p class="hero-note">R&eacute;ponse sous 48h &middot; Sans engagement</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="why-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Le constat</div>
+        <h2>Pourquoi investir dans un site web quand on est avocat &agrave; <span class="accent">Narbonne</span></h2>
+        <p class="section-subtitle">Le r&eacute;flexe digital des justiciables ne conna&icirc;t pas la taille des villes. &Agrave; Narbonne aussi, tout commence par une recherche Google.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">&#128270;</div>
+          <h3>Moins de concurrence, plus d'opportunit&eacute;s</h3>
+          <p>Le barreau de Narbonne est relativement compact. Cela signifie que les avocats qui investissent dans un site web de qualit&eacute; prennent un avantage consid&eacute;rable. Beaucoup de confr&egrave;res n'ont pas encore de pr&eacute;sence en ligne digne de ce nom&nbsp;: c'est le moment de vous positionner en t&ecirc;te.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">&#127758;</div>
+          <h3>Un bassin de chalandise &eacute;tendu</h3>
+          <p>Narbonne attire des justiciables de Lézignan-Corbi&egrave;res, Coursan, Gruissan, Port-la-Nouvelle et de toute la plaine audoise. Ces personnes cherchent un avocat en ligne bien avant de d&eacute;crocher leur t&eacute;l&eacute;phone. Votre site doit &ecirc;tre leur premier point de contact.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">&#128176;</div>
+          <h3>Un investissement rentable rapidement</h3>
+          <p>Dans un march&eacute; local moins satur&eacute;, le co&ucirc;t d'acquisition d'un client via le web est sensiblement inf&eacute;rieur &agrave; celui des grandes villes. Un seul nouveau dossier g&eacute;n&eacute;r&eacute; par votre site suffit souvent &agrave; rentabiliser l'investissement en quelques mois.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="services-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Nos prestations</div>
+        <h2>Ce que nous cr&eacute;ons pour les avocats <span class="accent">narbonnais</span></h2>
+        <p class="section-subtitle">Un site internet qui travaille pour vous, m&ecirc;me quand votre cabinet est ferm&eacute;.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">&#127912;</div>
+          <h3>Identit&eacute; visuelle forte</h3>
+          <p>Un design qui respire le professionnalisme et la confiance. Palette de couleurs, typographies et mise en page pens&eacute;es pour le monde juridique. Votre site refl&egrave;te l'autorit&eacute; de votre cabinet.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#128187;</div>
+          <h3>Site performant et conforme</h3>
+          <p>Temps de chargement optimis&eacute;, design responsive, HTTPS et conformit&eacute; RGPD native. Votre site est techniquement irr&eacute;prochable sur tous les supports.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#128200;</div>
+          <h3>R&eacute;f&eacute;rencement Narbonne</h3>
+          <p>Strat&eacute;gie SEO cibl&eacute;e sur les requ&ecirc;tes locales&nbsp;: &laquo;&nbsp;avocat Narbonne&nbsp;&raquo;, votre sp&eacute;cialit&eacute; + Aude. Optimisation Google Business et r&eacute;daction de contenu g&eacute;olocalis&eacute;.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9997;&#65039;</div>
+          <h3>Contenus sur-mesure</h3>
+          <p>Pages de sp&eacute;cialit&eacute;s, pr&eacute;sentation de l'&eacute;quipe, articles de blog. Tout est r&eacute;dig&eacute; avec un vocabulaire juridique pr&eacute;cis et accessible aux non-initi&eacute;s.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="process-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Notre m&eacute;thode</div>
+        <h2>De l'audit au lancement en <span class="accent">4 &eacute;tapes</span></h2>
+        <p class="section-subtitle">Un processus ma&icirc;tris&eacute; pour un r&eacute;sultat pr&eacute;visible et sans accroc.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-number">1</div>
+          <h3>Audit de l'existant</h3>
+          <p>Analyse de votre site actuel (s'il existe), &eacute;tude de vos concurrents narbonnais et identification des mots-cl&eacute;s prioritaires.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">2</div>
+          <h3>Direction artistique</h3>
+          <p>Maquettes visuelles sur-mesure. Vous validez chaque &eacute;cran&nbsp;: page d'accueil, pages de sp&eacute;cialit&eacute;, page contact, avant le moindre code.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">3</div>
+          <h3>R&eacute;alisation technique</h3>
+          <p>Int&eacute;gration, d&eacute;veloppement, r&eacute;daction des contenus SEO et tests de performance. Chaque d&eacute;tail est v&eacute;rifi&eacute;.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">4</div>
+          <h3>Mise en ligne &amp; suivi</h3>
+          <p>D&eacute;ploiement, configuration des outils de tracking et accompagnement post-lancement pour surveiller vos positions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="local-section">
+    <div class="container">
+      <div class="local-content reveal">
+        <div class="badge">&Eacute;cosyst&egrave;me local</div>
+        <h2>Au c&oelig;ur du paysage juridique <span class="accent">narbonnais</span></h2>
+        <p>Narbonne dispose d'un tribunal judiciaire qui traite les affaires civiles et p&eacute;nales de l'arrondissement. Le barreau de Narbonne, bien que de taille modeste, regroupe des praticiens comp&eacute;tents couvrant le droit immobilier, le droit de la famille, le droit p&eacute;nal et le contentieux commercial.</p>
+        <p>La ville, port&eacute;e par son dynamisme touristique (littoral m&eacute;diterran&eacute;en, vignobles des Corbi&egrave;res, patrimoine romain), g&eacute;n&egrave;re des probl&eacute;matiques juridiques sp&eacute;cifiques&nbsp;: droit de l'urbanisme, baux commerciaux saisonniers, contentieux de voisinage dans les zones r&eacute;sidentielles en croissance.</p>
+        <p>Nous adaptons votre site &agrave; ces r&eacute;alit&eacute;s locales et optimisons votre visibilit&eacute; sur l'ensemble du territoire audois&nbsp;: Carcassonne, L&eacute;zignan-Corbi&egrave;res, Sigean, Gruissan et les Corbi&egrave;res.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="badge">Questions fr&eacute;quentes</div>
+        <h2>Vos questions sur la cr&eacute;ation de site &agrave; <span class="accent">Narbonne</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question">Mon cabinet est petit, ai-je vraiment besoin d'un site web&nbsp;?</div>
+          <div class="faq-answer">Plus que jamais. Les cabinets de petite taille sont souvent ceux qui b&eacute;n&eacute;ficient le plus d'un site web professionnel, car il permet de cr&eacute;er un effet de taille et d'autorit&eacute; sup&eacute;rieur &agrave; la r&eacute;alit&eacute;. Un site bien fait positionne votre expertise au m&ecirc;me niveau que celle de cabinets plus grands.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">En combien de temps mon site sera-t-il en ligne&nbsp;?</div>
+          <div class="faq-answer">Le d&eacute;lai standard est de 4 &agrave; 6 semaines. Il peut varier selon le volume de contenus &agrave; r&eacute;diger et la rapidit&eacute; de vos validations. Nous nous adaptons &agrave; votre emploi du temps charg&eacute;.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Pouvez-vous aussi g&eacute;rer ma fiche Google Business&nbsp;?</div>
+          <div class="faq-answer">Oui, l'optimisation de votre fiche Google Business Profile fait partie int&eacute;grante de notre prestation SEO local. Nous la cr&eacute;ons ou l'optimisons pour qu'elle apparaisse dans le pack local lorsque quelqu'un recherche un avocat &agrave; Narbonne.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Quel budget pr&eacute;voir&nbsp;?</div>
+          <div class="faq-answer">La plupart de nos cabinets narbonnais investissent entre 2&nbsp;400&nbsp;&euro; et 3&nbsp;400&nbsp;&euro;&nbsp;HT. Nous proposons un paiement en 2 ou 3 fois pour &eacute;taler l'investissement. Le devis pr&eacute;cis est fourni apr&egrave;s l'audit gratuit.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
+
+  <section class="cta-section">
+    <div class="container reveal">
+      <h2>Donnez &agrave; votre cabinet narbonnais la <span class="accent">pr&eacute;sence digitale</span> qu'il m&eacute;rite</h2>
+      <p>Recevez un diagnostic gratuit de votre visibilit&eacute; en ligne sous 48 heures. Concret, actionnable, sans engagement.</p>
+      <a href="/#audit" class="cta-btn">Demander mon audit gratuit</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/notre-agence/">Notre agence</a></li>
+          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+
+</body>
+</html>
