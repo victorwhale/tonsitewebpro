@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TonSiteWebPro - Votre site web refait pour convertir | Audit gratuit</title>
-  <meta name="description" content="Votre site web vous fait perdre des clients. On le refait pour qu'il soit moderne, rapide, et visible sur Google et les IA conversationnelles.">
+  <title>TonSiteWebPro - Sites web pour avocats | Audit gratuit</title>
+  <meta name="description" content="Maître, votre site web inspire-t-il confiance à vos futurs clients ? On le refait pour qu'il soit moderne, rapide, et visible sur Google et les IA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,86 +16,54 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #020617;
-      color: #e2e8f0;
+      background: #FDFBF7;
+      color: #3D3D4E;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* ===== ANIMATED MESH GRADIENT BG ===== */
-    .bg-mesh {
+    /* ===== SUBTLE BG PATTERN ===== */
+    .bg-pattern {
       position: fixed;
       inset: 0;
       z-index: 0;
-      overflow: hidden;
       pointer-events: none;
+      overflow: hidden;
     }
 
-    .bg-mesh::before,
-    .bg-mesh::after {
+    .bg-pattern::before {
       content: '';
       position: absolute;
+      width: 900px;
+      height: 900px;
+      top: -20%;
+      right: -15%;
+      background: radial-gradient(circle, rgba(184, 156, 107, 0.06) 0%, transparent 70%);
       border-radius: 50%;
-      filter: blur(120px);
-      animation: float 18s ease-in-out infinite;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite;
     }
 
-    .bg-mesh::before {
-      width: 800px;
-      height: 800px;
-      top: -15%;
-      left: -10%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(99, 102, 241, 0.12) 50%, transparent 70%);
-    }
-
-    .bg-mesh::after {
+    .bg-pattern::after {
+      content: '';
+      position: absolute;
       width: 700px;
       height: 700px;
       bottom: -10%;
-      right: -10%;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(79, 70, 229, 0.1) 50%, transparent 70%);
-      animation-delay: -9s;
-      animation-direction: reverse;
-    }
-
-    .orb {
-      position: fixed;
+      left: -10%;
+      background: radial-gradient(circle, rgba(45, 74, 122, 0.04) 0%, transparent 70%);
       border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .orb-1 {
-      width: 500px;
-      height: 500px;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
-      animation: drift 22s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      top: 70%;
-      left: 20%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
-      animation: drift 16s ease-in-out infinite reverse;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite reverse;
+      animation-delay: -10s;
     }
 
     @keyframes float {
       0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(60px, -40px) scale(1.05); }
-      66% { transform: translate(-30px, 30px) scale(0.95); }
-    }
-
-    @keyframes drift {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(80px, -60px); }
+      33% { transform: translate(40px, -30px) scale(1.03); }
+      66% { transform: translate(-20px, 20px) scale(0.97); }
     }
 
     /* ===== Z-INDEX FOR CONTENT ===== */
@@ -115,34 +83,38 @@
       padding: 100px 0;
     }
 
-    h1, h2, h3, h4 { color: #f8fafc; line-height: 1.2; }
+    h1, h2, h3, h4 { color: #1A1A2E; line-height: 1.2; }
+
+    h1, h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
 
     h2 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 16px;
     }
 
     .section-subtitle {
-      color: #94a3b8;
+      color: #6B7280;
       font-size: 1.1rem;
       max-width: 600px;
       margin-bottom: 48px;
     }
 
-    .accent { color: #38bdf8; }
+    .accent { color: #8B6914; }
 
     .badge {
       display: inline-block;
-      background: rgba(56, 189, 248, 0.1);
-      color: #38bdf8;
+      background: rgba(139, 105, 20, 0.08);
+      color: #8B6914;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 6px 14px;
       border-radius: 100px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(139, 105, 20, 0.15);
       margin-bottom: 16px;
     }
 
@@ -163,14 +135,14 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(2, 6, 23, 0.7);
+      background: rgba(253, 251, 247, 0.85);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+      border-bottom: 1px solid rgba(139, 105, 20, 0.08);
       transition: box-shadow 0.3s;
     }
 
     nav.scrolled {
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 20px rgba(26, 26, 46, 0.06);
     }
 
     .nav-inner {
@@ -181,29 +153,31 @@
     }
 
     .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      font-weight: 800;
-      color: #f8fafc;
+      font-weight: 700;
+      color: #1A1A2E;
       text-decoration: none;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
-    .nav-logo span { color: #38bdf8; }
+    .nav-logo span { color: #8B6914; }
 
     .nav-cta {
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: #fff;
+      background: #1A1A2E;
+      color: #F5F0E8;
       font-weight: 600;
       font-size: 0.85rem;
       padding: 10px 22px;
       border-radius: 8px;
       text-decoration: none;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
     }
 
     .nav-cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+      background: #2D4A7A;
+      box-shadow: 0 6px 20px rgba(26, 26, 46, 0.15);
     }
 
     /* ===== HERO ===== */
@@ -212,58 +186,76 @@
       display: flex;
       align-items: center;
       padding-top: 64px;
+      background: linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 100%);
     }
 
     .hero-content {
-      max-width: 720px;
+      max-width: 740px;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: #94a3b8;
-      max-width: 540px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #6B7280;
+      max-width: 560px;
       margin-bottom: 36px;
     }
 
     .hero-cta {
       display: inline-block;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: #fff;
+      background: #1A1A2E;
+      color: #F5F0E8;
       font-weight: 700;
       font-size: 1rem;
       padding: 16px 36px;
       border-radius: 10px;
       text-decoration: none;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
     }
 
     .hero-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.35);
+      background: #2D4A7A;
+      box-shadow: 0 12px 40px rgba(26, 26, 46, 0.15);
     }
 
     .hero-note {
       margin-top: 16px;
       font-size: 0.85rem;
-      color: #475569;
+      color: #9CA3AF;
     }
 
-    /* ===== SECTION DIVIDERS (subtle glow lines) ===== */
-    .glow-divider {
+    .hero-quip {
+      margin-top: 32px;
+      padding: 16px 20px;
+      background: rgba(139, 105, 20, 0.05);
+      border-left: 3px solid #8B6914;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: #6B7280;
+      font-style: italic;
+      max-width: 480px;
+    }
+
+    /* ===== SECTION DIVIDERS ===== */
+    .elegant-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), rgba(139, 92, 246, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(139, 105, 20, 0.15), rgba(45, 74, 122, 0.1), transparent);
       border: none;
       margin: 0;
     }
 
     /* ===== PROBLEME ===== */
+    .probleme {
+      background: #FFFFFF;
+    }
+
     .problems-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -271,18 +263,17 @@
     }
 
     .problem-card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+      background: #FDFBF7;
+      border: 1px solid rgba(139, 105, 20, 0.1);
       border-radius: 16px;
       padding: 32px;
-      backdrop-filter: blur(12px);
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .problem-card:hover {
-      border-color: rgba(59, 130, 246, 0.3);
+      border-color: rgba(139, 105, 20, 0.25);
       transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+      box-shadow: 0 8px 32px rgba(26, 26, 46, 0.06);
     }
 
     .problem-icon {
@@ -291,26 +282,113 @@
     }
 
     .problem-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
     .problem-card p {
-      color: #94a3b8;
+      color: #6B7280;
       font-size: 0.95rem;
     }
 
+    .problem-quip {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: #9CA3AF;
+      font-style: italic;
+      border-top: 1px solid rgba(139, 105, 20, 0.08);
+      padding-top: 10px;
+    }
+
+    /* ===== REASSURANCE BAR ===== */
+    .reassurance {
+      background: #1A1A2E;
+      padding: 48px 0;
+    }
+
+    .reassurance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+
+    .reassurance-item {
+      color: #F5F0E8;
+    }
+
+    .reassurance-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #C9A84C;
+      margin-bottom: 4px;
+    }
+
+    .reassurance-label {
+      font-size: 0.85rem;
+      color: rgba(245, 240, 232, 0.7);
+    }
+
+    /* ===== ANALOGIE SECTION ===== */
+    .analogie {
+      background: #F5F0E8;
+    }
+
+    .analogie-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .analogie-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: #1A1A2E;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .analogie-explain {
+      font-size: 1rem;
+      color: #6B7280;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+
+    .analogie-cta {
+      display: inline-block;
+      background: #8B6914;
+      color: #FDFBF7;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .analogie-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 105, 20, 0.2);
+    }
+
     /* ===== FORMULAIRE ===== */
+    .audit-section {
+      background: #FFFFFF;
+    }
+
     .form-wrapper {
       max-width: 560px;
       margin: 0 auto;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.1);
+      background: #FDFBF7;
+      border: 1px solid rgba(139, 105, 20, 0.12);
       border-radius: 20px;
       padding: 40px 36px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 24px rgba(26, 26, 46, 0.04);
     }
 
     .form-grid {
@@ -323,74 +401,87 @@
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #cbd5e1;
+      color: #3D3D4E;
       margin-bottom: 6px;
     }
 
     .form-group input,
     .form-group select {
       width: 100%;
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: #FFFFFF;
+      border: 1px solid #E5E1D8;
       border-radius: 10px;
       padding: 14px 16px;
       font-size: 0.95rem;
-      color: #f1f5f9;
+      color: #1A1A2E;
       font-family: inherit;
       transition: border-color 0.25s, box-shadow 0.25s;
       outline: none;
     }
 
-    .form-group input::placeholder { color: #475569; }
+    .form-group input::placeholder { color: #9CA3AF; }
 
     .form-group input:focus,
     .form-group select:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      border-color: #8B6914;
+      box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
     }
 
     .form-group select {
       -webkit-appearance: none;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 16px center;
       padding-right: 40px;
     }
 
     .form-group select option {
-      background: #1e293b;
-      color: #f1f5f9;
+      background: #FFFFFF;
+      color: #1A1A2E;
     }
 
     .form-submit {
       width: 100%;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: #fff;
+      background: #1A1A2E;
+      color: #F5F0E8;
       font-weight: 700;
       font-size: 1rem;
       padding: 16px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
       margin-top: 8px;
       font-family: inherit;
     }
 
     .form-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+      background: #2D4A7A;
+      box-shadow: 0 12px 40px rgba(26, 26, 46, 0.12);
     }
 
     .form-note {
       text-align: center;
-      color: #64748b;
+      color: #9CA3AF;
       font-size: 0.85rem;
       margin-top: 20px;
     }
 
+    .form-quip {
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
     /* ===== AUDIT CONTENU ===== */
+    .audit-contenu {
+      background: #FDFBF7;
+    }
+
     .audit-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -403,23 +494,22 @@
       gap: 14px;
       align-items: flex-start;
       padding: 24px;
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(148, 163, 184, 0.07);
+      background: #FFFFFF;
+      border: 1px solid rgba(139, 105, 20, 0.08);
       border-radius: 14px;
-      backdrop-filter: blur(8px);
       transition: border-color 0.3s, box-shadow 0.3s;
     }
 
     .audit-item:hover {
-      border-color: rgba(59, 130, 246, 0.2);
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+      border-color: rgba(139, 105, 20, 0.2);
+      box-shadow: 0 4px 20px rgba(26, 26, 46, 0.04);
     }
 
     .audit-item-icon {
       flex-shrink: 0;
       width: 40px;
       height: 40px;
-      background: rgba(59, 130, 246, 0.12);
+      background: rgba(139, 105, 20, 0.08);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -435,10 +525,14 @@
 
     .audit-item-text p {
       font-size: 0.85rem;
-      color: #94a3b8;
+      color: #6B7280;
     }
 
     /* ===== REALISATIONS ===== */
+    .realisations {
+      background: #FFFFFF;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -447,28 +541,27 @@
 
     .project-card {
       position: relative;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+      background: #FDFBF7;
+      border: 1px solid rgba(139, 105, 20, 0.1);
       border-radius: 18px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
-      backdrop-filter: blur(12px);
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
       display: block;
     }
 
     .project-card:hover {
-      border-color: rgba(59, 130, 246, 0.35);
+      border-color: rgba(139, 105, 20, 0.3);
       transform: translateY(-8px);
-      box-shadow: 0 24px 64px rgba(59, 130, 246, 0.18);
+      box-shadow: 0 24px 64px rgba(26, 26, 46, 0.08);
     }
 
     .project-thumb {
       width: 100%;
       height: 280px;
       overflow: hidden;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+      border-bottom: 1px solid rgba(139, 105, 20, 0.06);
     }
 
     .project-thumb img {
@@ -489,8 +582,8 @@
 
     .project-tag {
       display: inline-block;
-      background: rgba(59, 130, 246, 0.12);
-      color: #60a5fa;
+      background: rgba(139, 105, 20, 0.1);
+      color: #8B6914;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -501,6 +594,7 @@
     }
 
     .project-info h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -508,14 +602,14 @@
 
     .project-info p {
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #6B7280;
       margin-bottom: 16px;
       line-height: 1.6;
     }
 
     .project-link {
       font-size: 0.85rem;
-      color: #38bdf8;
+      color: #8B6914;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
@@ -531,31 +625,42 @@
     }
 
     /* ===== TARIFS ===== */
+    .offres {
+      background: #F5F0E8;
+    }
+
     .tarifs-card {
       max-width: 680px;
       margin: 0 auto;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(99, 102, 241, 0.25);
+      background: #FFFFFF;
+      border: 1px solid rgba(139, 105, 20, 0.15);
       border-radius: 24px;
       padding: 48px 40px;
-      backdrop-filter: blur(12px);
       text-align: center;
+      box-shadow: 0 4px 24px rgba(26, 26, 46, 0.04);
     }
 
     .tarifs-fourchette {
       font-size: 1.15rem;
-      color: #cbd5e1;
+      color: #3D3D4E;
       line-height: 1.7;
       margin-bottom: 32px;
     }
 
     .tarifs-fourchette strong {
-      color: #f8fafc;
+      color: #1A1A2E;
       font-weight: 700;
     }
 
     .tarifs-fourchette .accent {
-      color: #38bdf8;
+      color: #8B6914;
+    }
+
+    .tarifs-quip {
+      font-size: 0.85rem;
+      color: #9CA3AF;
+      font-style: italic;
+      margin-bottom: 28px;
     }
 
     .tarifs-bullets {
@@ -572,7 +677,7 @@
       align-items: center;
       gap: 12px;
       font-size: 0.95rem;
-      color: #cbd5e1;
+      color: #3D3D4E;
     }
 
     .tarifs-bullets li::before {
@@ -580,9 +685,9 @@
       flex-shrink: 0;
       width: 22px;
       height: 22px;
-      background: rgba(59, 130, 246, 0.15);
+      background: rgba(139, 105, 20, 0.1);
       border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M1 5l3 3 7-7' stroke='%233b82f6' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M1 5l3 3 7-7' stroke='%238B6914' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -591,8 +696,8 @@
       display: inline-block;
       padding: 16px 40px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: #fff;
+      background: #1A1A2E;
+      color: #F5F0E8;
       font-weight: 700;
       font-size: 1rem;
       text-decoration: none;
@@ -601,12 +706,13 @@
 
     .tarifs-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(59, 130, 246, 0.3);
+      background: #2D4A7A;
+      box-shadow: 0 8px 28px rgba(26, 26, 46, 0.12);
     }
 
     /* ===== FOOTER ===== */
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.08);
+      background: #1A1A2E;
       padding: 48px 0 32px;
     }
 
@@ -619,13 +725,14 @@
     }
 
     .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      font-weight: 800;
-      color: #f8fafc;
+      font-weight: 700;
+      color: #F5F0E8;
       text-decoration: none;
     }
 
-    .footer-logo span { color: #38bdf8; }
+    .footer-logo span { color: #C9A84C; }
 
     .footer-links {
       display: flex;
@@ -634,22 +741,31 @@
     }
 
     .footer-links a {
-      color: #64748b;
+      color: rgba(245, 240, 232, 0.5);
       text-decoration: none;
       font-size: 0.85rem;
       transition: color 0.25s;
     }
 
-    .footer-links a:hover { color: #38bdf8; }
+    .footer-links a:hover { color: #C9A84C; }
 
     .footer-copy {
       width: 100%;
       text-align: center;
-      color: #334155;
+      color: rgba(245, 240, 232, 0.3);
       font-size: 0.8rem;
       margin-top: 32px;
       padding-top: 24px;
-      border-top: 1px solid rgba(148, 163, 184, 0.06);
+      border-top: 1px solid rgba(245, 240, 232, 0.08);
+    }
+
+    .footer-quip {
+      width: 100%;
+      text-align: center;
+      color: rgba(245, 240, 232, 0.25);
+      font-size: 0.75rem;
+      margin-top: 12px;
+      font-style: italic;
     }
 
     /* ===== RESPONSIVE ===== */
@@ -669,6 +785,8 @@
       .footer-inner { flex-direction: column; text-align: center; }
 
       .footer-links { flex-direction: column; gap: 12px; }
+
+      .reassurance-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 480px) {
@@ -677,15 +795,15 @@
       .problems-grid { grid-template-columns: 1fr; }
 
       .audit-list { grid-template-columns: 1fr; }
+
+      .reassurance-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ANIMATED BACKGROUND -->
-  <div class="bg-mesh"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
+  <!-- SUBTLE BG -->
+  <div class="bg-pattern"></div>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -699,63 +817,122 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content reveal">
-        <div class="badge">Audit gratuit de votre site</div>
-        <h1>Votre site inspire-t-il <span class="accent">confiance</span> à vos futurs clients&nbsp;?</h1>
-        <p>70% des prospects jugent votre crédibilité en moins de 3 secondes. Un site daté, c'est des clients qui ne vous contacteront jamais.</p>
+        <div class="badge">Audit gratuit pour avocats</div>
+        <h1>Ma&icirc;tre, votre site inspire-t-il <span class="accent">confiance</span> &agrave; vos futurs clients&nbsp;?</h1>
+        <p>Vous d&eacute;fendez vos clients avec rigueur. Mais votre site web, lui, plaide-t-il en votre faveur&nbsp;? 70&nbsp;% des justiciables choisissent leur avocat en ligne. En 3&nbsp;secondes, le verdict tombe.</p>
         <a href="#audit" class="hero-cta">Demander mon audit gratuit</a>
-        <p class="hero-note">Résultats envoyés sous 48h &middot; Sans engagement</p>
+        <p class="hero-note">R&eacute;sultats envoy&eacute;s sous 48h &middot; Sans engagement &middot; Aucune clause cach&eacute;e</p>
+        <div class="hero-quip">&laquo;&nbsp;Idem est non esse et non probari.&nbsp;&raquo; &mdash; En droit, ce qui n'est pas prouv&eacute; n'existe pas. En ligne, ce qui n'est pas visible non plus.</div>
       </div>
     </div>
   </section>
 
-  <hr class="glow-divider">
+  <hr class="elegant-divider">
+
+  <!-- REASSURANCE BAR -->
+  <section class="reassurance">
+    <div class="container">
+      <div class="reassurance-grid reveal">
+        <div class="reassurance-item">
+          <div class="reassurance-number">70%</div>
+          <div class="reassurance-label">des clients cherchent leur avocat en ligne</div>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-number">3 sec</div>
+          <div class="reassurance-label">pour juger la cr&eacute;dibilit&eacute; d'un site</div>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-number">48h</div>
+          <div class="reassurance-label">pour recevoir votre audit complet</div>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-number">0&nbsp;&euro;</div>
+          <div class="reassurance-label">l'audit est enti&egrave;rement gratuit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
 
   <!-- PROBLEME -->
   <section class="probleme" id="probleme">
     <div class="container">
       <div class="reveal">
         <div class="badge">Le constat</div>
-        <h2>Votre site web vous fait <span class="accent">perdre des clients</span></h2>
-        <p class="section-subtitle">La plupart des cabinets sous-estiment l'impact de leur site sur leur acquisition de clients.</p>
+        <h2>Votre site web est-il votre <span class="accent">meilleur associ&eacute;</span>&nbsp;?</h2>
+        <p class="section-subtitle">En droit, les pi&egrave;ces d&eacute;terminent le verdict. En ligne, votre site est la pi&egrave;ce ma&icirc;tresse de votre r&eacute;putation.</p>
       </div>
       <div class="problems-grid">
         <div class="problem-card reveal">
-          <div class="problem-icon">🏚️</div>
-          <h3>Un site vieillissant nuit à votre image</h3>
-          <p>Vos prospects comparent. Un design daté donne l'impression d'un cabinet qui n'évolue pas. La première impression se joue en ligne, bien avant le premier rendez-vous.</p>
+          <div class="problem-icon">&#9878;&#65039;</div>
+          <h3>Un site dat&eacute;, c'est un dossier mal ficel&eacute;</h3>
+          <p>Vos prospects comparent les cabinets comme ils compareraient des avocats au tribunal. Un design vieillissant, c'est comme plaider en robe froiss&eacute;e&nbsp;: le fond est peut-&ecirc;tre excellent, mais la forme inqui&egrave;te.</p>
+          <p class="problem-quip">Vous ne pr&eacute;senteriez pas un m&eacute;moire avec des fautes de frappe. Pourquoi accepter un site qui en fait autant&nbsp;?</p>
         </div>
         <div class="problem-card reveal">
-          <div class="problem-icon">🔍</div>
-          <h3>Invisible sur Google = inexistant</h3>
-          <p>Si votre cabinet n'apparaît pas dans les premiers résultats, vos concurrents captent ces prospects à votre place. Chaque jour sans SEO est un jour de clients perdus.</p>
+          <div class="problem-icon">&#128269;</div>
+          <h3>Invisible sur Google = non-lieu</h3>
+          <p>Si votre cabinet n'appara&icirc;t pas en premi&egrave;re page, c'est comme d&eacute;poser des conclusions que personne ne lira. Vos concurrents r&eacute;cup&egrave;rent ces prospects &agrave; votre place, chaque jour.</p>
+          <p class="problem-quip">Article 1er du code du r&eacute;f&eacute;rencement&nbsp;: &laquo;&nbsp;Nul n'est cens&eacute; ignorer Google.&nbsp;&raquo;</p>
         </div>
         <div class="problem-card reveal">
-          <div class="problem-icon">🤖</div>
-          <h3>Les IA recommandent vos concurrents</h3>
-          <p>ChatGPT, Perplexity et les autres IA conversationnelles recommandent désormais des prestataires. Si votre site n'est pas optimisé pour elles, vous n'existez pas dans ce nouveau canal.</p>
+          <div class="problem-icon">&#129302;</div>
+          <h3>Les IA recommandent vos confr&egrave;res</h3>
+          <p>ChatGPT et Perplexity recommandent d&eacute;sormais des cabinets. Si votre site n'est pas optimis&eacute; pour ces nouveaux canaux, vous &ecirc;tes absent du d&eacute;lib&eacute;r&eacute; num&eacute;rique.</p>
+          <p class="problem-quip">Objection&nbsp;! Votre cabinet m&eacute;rite d'&ecirc;tre cit&eacute; par l'IA, pas vos concurrents.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="glow-divider">
+  <hr class="elegant-divider">
+
+  <!-- ANALOGIE -->
+  <section class="analogie">
+    <div class="container">
+      <div class="analogie-content reveal">
+        <div class="badge">Parall&egrave;le</div>
+        <p class="analogie-quote">Vous ne laisseriez jamais un client se d&eacute;fendre seul devant un tribunal.<br>Alors pourquoi laisser votre site web <span class="accent">plaider sans pr&eacute;paration</span>&nbsp;?</p>
+        <p class="analogie-explain">Comme un bon dossier, un bon site web se construit avec m&eacute;thode&nbsp;: structure solide, arguments clairs, pr&eacute;sentation irr&eacute;prochable. Nous sommes les avocats de votre pr&eacute;sence en ligne &mdash; et on ne perd pas nos affaires.</p>
+        <a href="#audit" class="analogie-cta">Confier mon dossier num&eacute;rique</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="elegant-divider">
 
   <!-- FORMULAIRE AUDIT -->
   <section class="audit-section" id="audit">
     <div class="container">
       <div class="reveal" style="text-align:center;">
         <div class="badge">Gratuit &middot; Sans engagement</div>
-        <h2>Demandez votre <span class="accent">audit gratuit</span></h2>
-        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Recevez une analyse complète de votre site web avec des recommandations concrètes pour améliorer votre visibilité.</p>
+        <h2>Demandez votre <span class="accent">consultation gratuite</span></h2>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Comme une premi&egrave;re consultation juridique, notre audit est gratuit et sans engagement. Vous repartez avec un diagnostic clair et des recommandations concr&egrave;tes.</p>
       </div>
       <div class="form-wrapper reveal">
         <form action="https://formsubmit.co/victor@jaikin.eu" method="POST" class="form-grid">
-          <input type="hidden" name="_subject" value="Nouvelle demande d'audit - TonSiteWebPro">
+          <input type="hidden" name="_subject" value="Nouvelle demande d'audit avocat - TonSiteWebPro">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://tonsitewebpro-2a2206bdfe0c.herokuapp.com/#merci">
+          <input type="hidden" name="secteur" value="avocat">
           <div class="form-group">
             <label for="cabinet">Nom du cabinet</label>
-            <input type="text" id="cabinet" name="cabinet" placeholder="Ex : Cabinet Dupont & Associés" required>
+            <input type="text" id="cabinet" name="cabinet" placeholder="Ex : Cabinet Dupont & Associ&eacute;s" required>
+          </div>
+          <div class="form-group">
+            <label for="specialite">Sp&eacute;cialit&eacute;(s)</label>
+            <select id="specialite" name="specialite" required>
+              <option value="" disabled selected>Votre domaine d'exercice</option>
+              <option value="droit-affaires">Droit des affaires / M&A</option>
+              <option value="droit-famille">Droit de la famille</option>
+              <option value="droit-penal">Droit p&eacute;nal</option>
+              <option value="droit-travail">Droit du travail</option>
+              <option value="droit-immobilier">Droit immobilier</option>
+              <option value="droit-fiscal">Droit fiscal</option>
+              <option value="propriete-intellectuelle">Propri&eacute;t&eacute; intellectuelle</option>
+              <option value="autre">Autre sp&eacute;cialit&eacute;</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="url">URL du site web actuel</label>
@@ -766,111 +943,102 @@
             <input type="email" id="email" name="email" placeholder="contact@votrecabinet.fr" required>
           </div>
           <div class="form-group">
-            <label for="phone">Téléphone</label>
+            <label for="phone">T&eacute;l&eacute;phone</label>
             <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
-          </div>
-          <div class="form-group">
-            <label for="secteur">Secteur d'activité</label>
-            <select id="secteur" name="secteur" required>
-              <option value="" disabled selected>Choisir votre secteur</option>
-              <option value="conseil">Conseil en gestion</option>
-              <option value="avocat">Avocat</option>
-              <option value="expert-comptable">Expert-comptable</option>
-              <option value="autre">Autre</option>
-            </select>
           </div>
           <button type="submit" class="form-submit">Recevoir mon audit gratuit</button>
         </form>
-        <p class="form-note">Audit envoyé sous 48h. On vous appelle pour vous présenter les résultats.</p>
+        <p class="form-note">Audit envoy&eacute; sous 48h. On vous appelle pour vous pr&eacute;senter les r&eacute;sultats.</p>
+        <p class="form-quip">Promis, c'est plus rapide qu'une mise en d&eacute;lib&eacute;r&eacute;.</p>
       </div>
     </div>
   </section>
 
-  <hr class="glow-divider">
+  <hr class="elegant-divider">
 
   <!-- CE QUE CONTIENT L'AUDIT -->
   <section class="audit-contenu">
     <div class="container">
       <div class="reveal">
         <div class="badge">Ce que vous recevez</div>
-        <h2>Un audit complet et <span class="accent">actionnable</span></h2>
-        <p class="section-subtitle">Pas de jargon technique. Des recommandations claires, priorisées par impact sur votre activité.</p>
+        <h2>Un audit aussi rigoureux que <span class="accent">vos conclusions</span></h2>
+        <p class="section-subtitle">Pas de jargon technique obscur. Des recommandations claires et prioris&eacute;es, comme les motifs d'un bon jugement.</p>
       </div>
       <ul class="audit-list">
         <li class="audit-item reveal">
-          <div class="audit-item-icon">🎨</div>
+          <div class="audit-item-icon">&#9878;&#65039;</div>
           <div class="audit-item-text">
-            <h4>Apparence et expérience utilisateur</h4>
-            <p>Votre site donne-t-il une image professionnelle et inspire-t-il confiance dès la première visite ?</p>
+            <h4>Image professionnelle et cr&eacute;dibilit&eacute;</h4>
+            <p>Votre site inspire-t-il la m&ecirc;me confiance que votre cabinet&nbsp;? Premi&egrave;re impression, coh&eacute;rence, autorit&eacute; per&ccedil;ue.</p>
           </div>
         </li>
         <li class="audit-item reveal">
-          <div class="audit-item-icon">⚡</div>
+          <div class="audit-item-icon">&#9889;</div>
           <div class="audit-item-text">
-            <h4>Vitesse et compatibilité mobile</h4>
-            <p>Un site lent fait fuir 53% des visiteurs mobiles. On mesure la performance réelle de votre site.</p>
+            <h4>Vitesse et compatibilit&eacute; mobile</h4>
+            <p>53% des justiciables consultent sur mobile. Un site lent, c'est comme un avocat en retard &agrave; l'audience.</p>
           </div>
         </li>
         <li class="audit-item reveal">
-          <div class="audit-item-icon">📊</div>
+          <div class="audit-item-icon">&#128200;</div>
           <div class="audit-item-text">
-            <h4>Positionnement Google</h4>
-            <p>Vérification de votre visibilité sur les mots-clés stratégiques de votre secteur et de votre zone géographique.</p>
+            <h4>Positionnement Google local</h4>
+            <p>V&eacute;rification de votre visibilit&eacute; sur &laquo;&nbsp;avocat + [votre ville]&nbsp;&raquo; et les mots-cl&eacute;s de votre sp&eacute;cialit&eacute;.</p>
           </div>
         </li>
         <li class="audit-item reveal">
-          <div class="audit-item-icon">🤖</div>
+          <div class="audit-item-icon">&#129302;</div>
           <div class="audit-item-text">
-            <h4>Visibilité sur ChatGPT et Perplexity</h4>
-            <p>Nouveau canal de recommandation : on vérifie si les IA vous citent quand on leur demande un prestataire dans votre domaine.</p>
+            <h4>Visibilit&eacute; sur ChatGPT et Perplexity</h4>
+            <p>On v&eacute;rifie si les IA vous recommandent quand un prospect demande un avocat dans votre domaine.</p>
           </div>
         </li>
         <li class="audit-item reveal">
-          <div class="audit-item-icon">🎯</div>
+          <div class="audit-item-icon">&#127919;</div>
           <div class="audit-item-text">
-            <h4>Recommandations prioritaires</h4>
-            <p>Plan d'action personnalisé avec les 3 à 5 améliorations à plus fort impact pour votre cabinet.</p>
+            <h4>Plan d'action prioritaire</h4>
+            <p>Les 3 &agrave; 5 am&eacute;liorations &agrave; plus fort impact pour votre cabinet. Des pi&egrave;ces &agrave; conviction, pas du blabla.</p>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <hr class="glow-divider">
+  <hr class="elegant-divider">
 
   <!-- REALISATIONS -->
   <section class="realisations" id="realisations">
     <div class="container">
       <div class="reveal">
-        <div class="badge">Portfolio</div>
-        <h2>Nos <span class="accent">réalisations</span></h2>
-        <p class="section-subtitle">Des sites conçus pour inspirer confiance et convertir les visiteurs en clients.</p>
+        <div class="badge">R&eacute;f&eacute;rences</div>
+        <h2>Nos <span class="accent">pi&egrave;ces &agrave; conviction</span></h2>
+        <p class="section-subtitle">Des sites con&ccedil;us pour inspirer confiance d&egrave;s la premi&egrave;re visite et convertir les visiteurs en rendez-vous.</p>
       </div>
       <div class="projects-grid">
-        <a class="project-card reveal" href="https://victorwhale.github.io/kammerzel-showcase/" target="_blank" rel="noopener">
-          <div class="project-thumb"><img src="img/restaurant.png" alt="Site restaurant"></div>
+        <a class="project-card reveal" href="https://victorwhale.github.io/m-a-avocat-hub/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/avocats.png" alt="Site cabinet d'avocats M&A"></div>
           <div class="project-info">
-            <span class="project-tag">Restaurant</span>
-            <h3>Site vitrine gastronomique</h3>
-            <p>Mise en valeur du patrimoine et de l'expérience culinaire d'un restaurant historique à Strasbourg.</p>
+            <span class="project-tag">Cabinet M&A</span>
+            <h3>Cabinet d'avocats en fusions-acquisitions</h3>
+            <p>Site professionnel et sobre, pens&eacute; pour rassurer les dirigeants et faciliter la prise de rendez-vous.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
         <a class="project-card reveal" href="https://victorwhale.github.io/design-brilliance-studio/" target="_blank" rel="noopener">
-          <div class="project-thumb"><img src="img/architectes.png" alt="Site architectes"></div>
+          <div class="project-thumb"><img src="img/architectes.png" alt="Site cabinet professionnel"></div>
           <div class="project-info">
-            <span class="project-tag">Architectes</span>
-            <h3>Vitrine cabinet d'architecture</h3>
-            <p>Design immersif et navigation fluide pour mettre en avant les projets et l'identité créative du cabinet.</p>
+            <span class="project-tag">Professions lib&eacute;rales</span>
+            <h3>Vitrine cabinet professionnel</h3>
+            <p>Design &eacute;l&eacute;gant et navigation fluide pour valoriser l'expertise et l'identit&eacute; du cabinet.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
-        <a class="project-card reveal" href="https://victorwhale.github.io/m-a-avocat-hub/" target="_blank" rel="noopener">
-          <div class="project-thumb"><img src="img/avocats.png" alt="Site avocats"></div>
+        <a class="project-card reveal" href="https://victorwhale.github.io/kammerzel-showcase/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/restaurant.png" alt="Site vitrine premium"></div>
           <div class="project-info">
-            <span class="project-tag">Avocats</span>
-            <h3>Site cabinet d'avocats M&A</h3>
-            <p>Site professionnel pensé pour rassurer les prospects et faciliter la prise de rendez-vous.</p>
+            <span class="project-tag">Site vitrine</span>
+            <h3>Vitrine premium &agrave; Strasbourg</h3>
+            <p>Mise en valeur du patrimoine et de l'excellence. Le m&ecirc;me soin que nous apportons &agrave; chaque projet.</p>
             <span class="project-link">Voir le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
@@ -878,27 +1046,29 @@
     </div>
   </section>
 
-  <hr class="glow-divider">
+  <hr class="elegant-divider">
 
   <!-- TARIFS -->
   <section class="offres" id="offres">
     <div class="container">
       <div class="reveal">
-        <div class="badge">Tarifs</div>
-        <h2>Combien <span class="accent">ça coûte</span>&nbsp;?</h2>
+        <div class="badge">Honoraires</div>
+        <h2>Nos <span class="accent">honoraires</span></h2>
       </div>
       <div class="tarifs-card reveal">
         <p class="tarifs-fourchette">
-          Nos missions sont sur-mesure.<br>
-          La majorité de nos clients investissent <strong class="accent">entre 2&nbsp;400&nbsp;&euro; et 3&nbsp;400&nbsp;&euro;&nbsp;HT</strong>,<br>
-          après un audit personnalisé de leur cabinet.
+          Comme vous, nous travaillons sur-mesure.<br>
+          La majorit&eacute; de nos cabinets partenaires investissent <strong class="accent">entre 2&nbsp;400&nbsp;&euro; et 3&nbsp;400&nbsp;&euro;&nbsp;HT</strong>,<br>
+          apr&egrave;s un audit personnalis&eacute; de leur pr&eacute;sence en ligne.
         </p>
+        <p class="tarifs-quip">Pas de surprise sur la facture. On n'est pas ce genre d'avocats.</p>
         <ul class="tarifs-bullets">
-          <li>Audit offert, sans engagement</li>
-          <li>Proposition adaptée à votre cabinet</li>
-          <li>Aucun engagement sans votre validation</li>
+          <li>Consultation initiale offerte, sans engagement</li>
+          <li>Devis d&eacute;taill&eacute; adapt&eacute; &agrave; votre cabinet</li>
+          <li>Aucun engagement sans votre accord &eacute;clair&eacute;</li>
+          <li>Paiement en 2 ou 3 fois possible</li>
         </ul>
-        <a href="#audit" class="tarifs-cta">Demander mon audit gratuit</a>
+        <a href="#audit" class="tarifs-cta">Demander ma consultation gratuite</a>
       </div>
     </div>
   </section>
@@ -911,10 +1081,11 @@
         <ul class="footer-links">
           <li><a href="https://tonsitewebpro.com" target="_blank" rel="noopener">tonsitewebpro.com</a></li>
           <li><a href="mailto:contact@tonsitewebpro.com">contact@tonsitewebpro.com</a></li>
-          <li><a href="#mentions-legales">Mentions légales</a></li>
+          <li><a href="#mentions-legales">Mentions l&eacute;gales</a></li>
         </ul>
       </div>
-      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits réservés. Hébergé en France. Conforme RGPD.</p>
+      <p class="footer-copy">&copy; 2025 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s. H&eacute;berg&eacute; en France. Conforme RGPD.</p>
+      <p class="footer-quip">Aucun avocat n'a &eacute;t&eacute; bless&eacute; durant la cr&eacute;ation de ce site.</p>
     </div>
   </footer>
 
