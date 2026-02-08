@@ -6,6 +6,15 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Agence SEO pour Avocats &agrave; Marseille | TonSiteWebPro</title>
   <meta name="description" content="Agence SEO sp&eacute;cialis&eacute;e pour cabinets d'avocats &agrave; Marseille. Dominez Google, Google Maps et les IA dans la deuxi&egrave;me ville de France. Audit gratuit.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Agence SEO pour Avocats &agrave; Marseille | TonSiteWebPro">
+  <meta property="og:description" content="Agence SEO sp&eacute;cialis&eacute;e pour cabinets d'avocats &agrave; Marseille. Dominez Google, Google Maps et les IA dans la deuxi&egrave;me ville de France. Audit gratuit.">
+  <meta property="og:url" content="https://tonsitewebpro.com/agence-seo-marseille/">
+  <meta property="og:site_name" content="TonSiteWebPro">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Agence SEO pour Avocats &agrave; Marseille | TonSiteWebPro">
+  <meta name="twitter:description" content="Agence SEO sp&eacute;cialis&eacute;e pour cabinets d'avocats &agrave; Marseille. Dominez Google, Google Maps et les IA dans la deuxi&egrave;me ville de France. Audit gratuit.">
   <link rel="canonical" href="https://tonsitewebpro.com/agence-seo-marseille/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,6 +70,19 @@
     .nav-logo span { color: #8B6914; }
     .nav-cta { background: #1A1A2E; color: #F5F0E8; font-weight: 600; font-size: 0.85rem; padding: 10px 22px; border-radius: 8px; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
     .nav-cta:hover { transform: translateY(-1px); background: #2D4A7A; box-shadow: 0 6px 20px rgba(26,26,46,0.15); }
+    /* ===== NAV LINKS ===== */
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: #3D3D4E; text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover { color: #8B6914; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1A1A2E; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(253,251,247,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 20px 24px; border-bottom: 1px solid rgba(139,105,20,0.1); box-shadow: 0 4px 16px rgba(0,0,0,0.06); gap: 16px; z-index: 99; }
+      .nav-links.active { display: flex; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { font-size: 0.8rem !important; padding: 8px 16px !important; }
+    }
+
     .breadcrumb-bar { padding-top: 110px; padding-bottom: 8px; background: #F5F0E8; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #6B7280; list-style: none; flex-wrap: wrap; }
     .breadcrumb a { color: #8B6914; text-decoration: none; }
@@ -110,22 +132,35 @@
     .cta-btn:hover { transform: translateY(-2px); background: #2D4A7A; box-shadow: 0 12px 40px rgba(26,26,46,0.15); }
     .cta-note { margin-top: 14px; font-size: 0.85rem; color: #9CA3AF; }
     footer { background: #1A1A2E; padding: 48px 0 32px; }
-    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
     .footer-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; text-decoration: none; }
     .footer-logo span { color: #C9A84C; }
-    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
-    .footer-links a:hover { color: #C9A84C; }
-    .footer-copy { width: 100%; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08); }
     @media (max-width: 768px) {
       section { padding: 72px 0; }
       .hero { padding-top: 32px; padding-bottom: 56px; }
       .services-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { flex-direction: column; gap: 12px; }
     }
     @media (max-width: 480px) { .container { padding: 0 16px; } .stats-grid { grid-template-columns: 1fr; } }
+  
+    /* ===== FOOTER ===== */
+    footer { background: #1A1A2E; color: #F5F0E8; padding: 60px 0 30px; position: relative; z-index: 1; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; text-decoration: none; display: inline-block; }
+    .footer-logo span { color: #C9A84C; }
+    .footer-tagline { margin-top: 12px; font-size: 0.9rem; color: #9CA3AF; line-height: 1.6; }
+    .footer-col h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; color: #C9A84C; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { color: #D1D5DB; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #C9A84C; }
+    .footer-divider { border: none; height: 1px; background: rgba(255,255,255,0.1); margin: 0 0 20px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.85rem; color: #9CA3AF; margin: 0; }
+    .footer-bottom a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-bottom a:hover { color: #C9A84C; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
+
   </style>
 </head>
 <body>
@@ -135,6 +170,16 @@
   <nav id="navbar">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">TonSiteWeb<span>Pro</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="/creation-de-site/">Cr&eacute;ation de site</a>
+        <a href="/referencement-seo/">R&eacute;f&eacute;rencement SEO</a>
+        <a href="/blog/">Blog</a>
+        <a href="/notre-agence/">Notre agence</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <a href="/#audit" class="nav-cta">Audit gratuit</a>
     </div>
   </nav>
@@ -316,16 +361,44 @@
 
   <footer>
     <div class="container">
-      <div class="footer-inner">
-        <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
-        <ul class="footer-links">
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/notre-agence/">Notre agence</a></li>
-          <li><a href="/politique-de-confidentialite/">Confidentialit&eacute;</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="footer-logo">TonSiteWeb<span>Pro</span></a>
+          <p class="footer-tagline">Agence web sp&eacute;cialis&eacute;e pour les cabinets d'avocats. Cr&eacute;ation, refonte et r&eacute;f&eacute;rencement SEO.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/creation-de-site/">Cr&eacute;ation de site</a></li>
+            <li><a href="/refonte-site-web/">Refonte de site</a></li>
+            <li><a href="/referencement-seo/">R&eacute;f&eacute;rencement SEO</a></li>
+            <li><a href="/visibilite-en-ligne/">Visibilit&eacute; en ligne</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/prix-site-internet-avocat/">Tarifs</a></li>
+            <li><a href="/notre-agence/">Notre agence</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Villes</h4>
+          <ul>
+            <li><a href="/agence-seo-marseille/">Marseille</a></li>
+            <li><a href="/agence-seo-montpellier/">Montpellier</a></li>
+            <li><a href="/agence-seo-avignon/">Avignon</a></li>
+            <li><a href="/agence-seo-nimes/">N&icirc;mes</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="footer-copy">&copy; 2026 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s.</p>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2026 TonSiteWebPro. Tous droits r&eacute;serv&eacute;s.</p>
+        <a href="/politique-de-confidentialite/">Politique de confidentialit&eacute;</a>
+      </div>
     </div>
   </footer>
 
@@ -339,6 +412,16 @@
     document.querySelectorAll('.faq-question').forEach((q) => {
       q.addEventListener('click', () => { q.parentElement.classList.toggle('open'); });
     });
+  
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav')) navLinks.classList.remove('active');
+      });
+    }
   </script>
 
 </body>
