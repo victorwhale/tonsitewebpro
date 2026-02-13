@@ -1,4 +1,4 @@
-# TonSiteWebPro - Configuration Apache
+# TonSiteWebPro - Configuration Apache pour Heroku
 # Dernière mise à jour: 2026-02-13
 
 # ==========================================
@@ -32,68 +32,15 @@
 # SECURITY
 # ==========================================
 
-# Disable directory browsing
-Options -Indexes
-
-# Protect .htaccess
-<Files .htaccess>
-  Order allow,deny
-  Deny from all
-</Files>
-
-# Protect wp-config.php
-<Files wp-config.php>
-  Order allow,deny
-  Deny from all
-</Files>
-
-# Block access to sensitive files
-<FilesMatch "^(wp-config\.php|php\.ini|php5\.ini|install\.php|xmlrpc\.php)">
-  Order allow,deny
-  Deny from all
+# Protect sensitive files
+<FilesMatch "^(\.htaccess|wp-config\.php|php\.ini|php5\.ini|install\.php|xmlrpc\.php)$">
+  Require all denied
 </FilesMatch>
 
-# Disable XML-RPC (prevent brute force attacks)
+# Block XML-RPC (prevent brute force attacks)
 <Files xmlrpc.php>
-  Order Deny,Allow
-  Deny from all
+  Require all denied
 </Files>
-
-# Block common malicious requests
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
-  RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-  RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-  RewriteRule ^(.*)$ index.php [F,L]
-</IfModule>
-
-# ==========================================
-# SEO & REDIRECTIONS
-# ==========================================
-
-# Force HTTPS
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-
-# Force WWW or non-WWW (choisir l'un ou l'autre)
-# Pour forcer non-WWW (recommandé si configuré ainsi)
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^www\.tonsitewebpro\.com [NC]
-  RewriteRule ^(.*)$ https://tonsitewebpro.com/$1 [L,R=301]
-</IfModule>
-
-# Remove trailing slash (optionnel)
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} (.+)/$
-  RewriteRule ^ %1 [R=301,L]
-</IfModule>
 
 # ==========================================
 # MIME TYPES
@@ -120,10 +67,3 @@ AddDefaultCharset UTF-8
 <IfModule mod_mime.c>
   AddCharset UTF-8 .html .css .js .xml .json .rss .atom
 </IfModule>
-
-# ==========================================
-# ERROR PAGES (optionnel)
-# ==========================================
-
-# ErrorDocument 404 /404.html
-# ErrorDocument 500 /500.html
