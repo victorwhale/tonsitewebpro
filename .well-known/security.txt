@@ -1,0 +1,8 @@
+Contact: https://tonsitewebpro.com/contact/
+Expires: 2027-02-13T23:59:59.000Z
+Preferred-Languages: fr, en
+Canonical: https://tonsitewebpro.com/.well-known/security.txt
+
+# Politique de divulgation des vulnérabilités
+# Si vous découvrez une faille de sécurité sur ce site, merci de nous contacter via le formulaire de contact.
+# Nous nous engageons à traiter toutes les signalisations de manière confidentielle et à y répondre dans les plus brefs délais.

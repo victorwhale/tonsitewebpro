@@ -1,0 +1,4 @@
+# ads.txt for tonsitewebpro.com
+# Ce fichier est utilisé pour déclarer les vendeurs autorisés de publicité
+# Actuellement, aucun vendeur de publicité n'est autorisé sur ce site
+# Dernière mise à jour: 2026-02-13

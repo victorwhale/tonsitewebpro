@@ -1,0 +1,23 @@
+/* TEAM */
+
+Chef de projet & Développeur: Victor Glesskrumhorn
+Site: https://tonsitewebpro.com
+Localisation: Sud de la France
+Contact: https://tonsitewebpro.com/contact/
+
+/* THANKS */
+
+Technologies: WordPress, HTML5, CSS3, JavaScript
+Hébergement: Hébergement web professionnel
+Fonts: Google Fonts
+Icons: Font Awesome
+
+/* SITE */
+
+Dernière mise à jour: 2026/02/13
+Langage: Français
+Doctype: HTML5
+IDE: Claude Code, VS Code
+Standards: W3C, WCAG 2.1, RGPG
+Frameworks: WordPress, Bootstrap
+Optimisation: SEO, Performance, Accessibilité

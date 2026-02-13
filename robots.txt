@@ -1,4 +1,29 @@
+# Robots.txt for tonsitewebpro.com
+# Dernière mise à jour: 2026-02-13
+
 User-agent: *
 Allow: /
 
+# Bloquer les fichiers système et techniques
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /*.inc$
+
+# Bloquer les pages utilitaires non destinées au référencement
+Disallow: /email.html
+
+# Bloquer les paramètres de requête communs
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*?*ref=
+
+# Optimisation crawl budget
+Crawl-delay: 1
+
+# Fichiers utiles
+# Humans: https://tonsitewebpro.com/humans.txt
+# LLMs: https://tonsitewebpro.com/llms.txt
+
+# Sitemaps
 Sitemap: https://tonsitewebpro.com/sitemap.xml
